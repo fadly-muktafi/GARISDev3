@@ -1,0 +1,538 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>GARISDev — Membangun sistem yang dipercaya</title>
+  <meta name="description" content="GARISDev merancang, membangun, dan mengintegrasikan perangkat lunak untuk pemerintahan, BUMN, dan korporasi — dari aplikasi web dan mobile hingga dashboard analitik dan sistem enterprise.">
+  <link rel="icon" href="assets/garisdev-icon-cropped.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ============ HEADER ============ -->
+  <header class="site-header" id="siteHeader">
+    <div class="container nav-inner">
+      <a href="#atas" class="brand" aria-label="GARISDev, kembali ke atas">
+        <img src="assets/garisdev-logo-white-cropped.png" alt="GARISDev" class="brand-logo brand-logo-light">
+        <img src="assets/garisdev-logo-dark-cropped.png" alt="" class="brand-logo brand-logo-dark">
+      </a>
+
+      <nav class="desktop-nav" aria-label="Navigasi utama">
+        <a href="#klien" data-section="klien">Klien &amp; Proyek</a>
+        <a href="#layanan" data-section="layanan">Layanan</a>
+        <a href="#produk" data-section="produk">Produk Unggulan</a>
+        <a href="#nilai" data-section="nilai">Nilai SPORTIF</a>
+        <a href="#teknologi" data-section="teknologi">Teknologi</a>
+        <a href="#kontak" data-section="kontak">Kontak</a>
+      </nav>
+
+      <div class="nav-actions">
+        <div class="socials desktop-socials">
+          <a href="https://wa.me/6281387297524?text=Halo%20GARISDev%2C%20saya%20ingin%20berkonsultasi%20mengenai%20kebutuhan%20pengembangan%20sistem%20dan%20solusi%20teknologi%20informasi." target="_blank" rel="noopener noreferrer" aria-label="WhatsApp GARISDev">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+          </a>
+          <a href="mailto:[EMAIL_1]" aria-label="Email GARISDev">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          </a>
+          <a href="https://www.garisdev.co.id" target="_blank" rel="noopener noreferrer" aria-label="Website GARISDev">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+          </a>
+        </div>
+        <button class="menu-toggle" id="menuToggle" type="button" aria-label="Buka menu navigasi" aria-expanded="false" aria-controls="mobileDrawer">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ============ MOBILE DRAWER ============ -->
+  <div class="drawer-backdrop" id="drawerBackdrop" hidden></div>
+  <aside class="mobile-drawer" id="mobileDrawer" aria-hidden="true">
+    <nav aria-label="Navigasi seluler">
+      <a href="#klien" data-close>Klien &amp; Proyek</a>
+      <a href="#layanan" data-close>Layanan</a>
+      <a href="#produk" data-close>Produk Unggulan</a>
+      <a href="#nilai" data-close>Nilai SPORTIF</a>
+      <a href="#teknologi" data-close>Teknologi</a>
+      <a href="#kontak" data-close>Kontak</a>
+    </nav>
+  </aside>
+
+  <main>
+    <!-- ============ 1. HERO ============ -->
+    <section id="atas" class="hero">
+      <div class="hero-bg" role="img" aria-label="Tim profesional sedang berdiskusi di ruang kerja"></div>
+      <div class="hero-scrim"></div>
+      <div class="container hero-inner">
+        <div class="hero-panel">
+          <div class="hero-separator"></div>
+          <p class="hero-eyebrow">PT Global Agra Ripta Solusindo</p>
+          <h1>Membangun sistem yang dipercaya</h1>
+          <p class="hero-lead">GARISDev merancang, membangun, dan mengintegrasikan perangkat lunak untuk pemerintahan, BUMN, dan korporasi — dari aplikasi web dan mobile hingga dashboard analitik dan sistem enterprise.</p>
+          <div class="hero-actions">
+            <a href="#kontak" class="btn btn-light">Diskusikan Kebutuhan <span aria-hidden="true">→</span></a>
+            <a href="assets/documents/company-profile-garisdev-2026.pdf" download="COMPANY-PROFILE-GARISDEV-2026.pdf" class="btn btn-outline-light js-download">Unduh Profil <span class="btn-meta">PDF · 2,1 MB</span></a>
+          </div>
+        </div>
+      </div>
+      <a href="#klien" class="scroll-cue" aria-label="Gulir ke bawah"><span>Scroll Down</span><i></i></a>
+    </section>
+
+    <!-- hero facts -->
+    <div class="facts">
+      <div class="container facts-grid">
+        <div class="fact"><strong>2014</strong><span>Beroperasi sejak</span></div>
+        <div class="fact"><strong>7</strong><span>Platform unggulan</span></div>
+        <div class="fact"><strong>15+</strong><span>Solusi enterprise</span></div>
+      </div>
+    </div>
+
+    <!-- ============ 2. KLIEN & PROYEK ============ -->
+    <section id="klien" class="section section-white">
+      <div class="container">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Klien &amp; Mitra</p>
+          <h2>Dipercaya institusi negara dan korporasi nasional</h2>
+          <span class="separator-line"></span>
+          <p class="section-lead">Sejak 2014, GARISDev dipercaya kementerian, instansi pertahanan, lembaga pemerintah, dan korporasi nasional dalam mengembangkan serta mengelola solusi teknologi informasi yang andal.</p>
+        </div>
+
+        <div class="marquee reveal" aria-label="Logo klien GARISDev">
+          <div class="marquee-track">
+            <div class="marquee-group">
+              <img src="assets/clients/trim/01_bnpt_ri.png" alt="BNPT RI" title="BNPT RI">
+              <img src="assets/clients/trim/02_mabes_tni.png" alt="Mabes TNI" title="Mabes TNI">
+              <img src="assets/clients/trim/03_kemnaker_ri.png" alt="Kemnaker RI" title="Kemnaker RI">
+              <img src="assets/clients/trim/04_jfx_exchange.png" alt="JFX Exchange" title="JFX Exchange">
+              <img src="assets/clients/trim/05_isp.png" alt="PT ISP" title="PT ISP">
+              <img src="assets/clients/trim/06_asuransi_jasindo.png" alt="Asuransi Jasindo" title="Asuransi Jasindo">
+              <img src="assets/clients/trim/07_mom_n_jo.png" alt="Mom N Jo" title="Mom N Jo">
+              <img src="assets/clients/trim/08_kementan_ri.png" alt="Kementan RI" title="Kementan RI">
+              <img src="assets/clients/trim/09_adinata_graha_raya.png" alt="PT Adinata Graha Raya" title="PT Adinata Graha Raya">
+            </div>
+            <div class="marquee-group" aria-hidden="true">
+              <img src="assets/clients/trim/01_bnpt_ri.png" alt="">
+              <img src="assets/clients/trim/02_mabes_tni.png" alt="">
+              <img src="assets/clients/trim/03_kemnaker_ri.png" alt="">
+              <img src="assets/clients/trim/04_jfx_exchange.png" alt="">
+              <img src="assets/clients/trim/05_isp.png" alt="">
+              <img src="assets/clients/trim/06_asuransi_jasindo.png" alt="">
+              <img src="assets/clients/trim/07_mom_n_jo.png" alt="">
+              <img src="assets/clients/trim/08_kementan_ri.png" alt="">
+              <img src="assets/clients/trim/09_adinata_graha_raya.png" alt="">
+            </div>
+          </div>
+        </div>
+
+        <div class="sub-block">
+          <div class="section-heading reveal">
+            <p class="eyebrow">Rekam Jejak</p>
+            <h2>Proyek strategis yang telah kami bangun</h2>
+            <span class="separator-line"></span>
+            <p class="section-lead">Solusi teknologi berstandar tinggi yang diimplementasikan di instansi pertahanan, lembaga pemerintah non-kementerian, bursa berjangka, dan korporasi terkemuka.</p>
+          </div>
+
+          <div class="portfolio-grid">
+            <article class="portfolio-item reveal">
+              <img src="assets/ref/portfolio-item181.jpg" alt="">
+              <div class="portfolio-scrim"></div>
+              <div class="portfolio-caption">
+                <p class="portfolio-client">Badan Nasional Penanggulangan Terorisme (BNPT RI)</p>
+                <h3>BNPT E-Government</h3>
+                <p class="portfolio-meta">2019 · Pemerintah / Lembaga Negara</p>
+              </div>
+              <div class="portfolio-overlay">
+                <p class="eyebrow">Pemerintah / Lembaga Negara</p>
+                <h3>BNPT E-Government</h3>
+                <p>Platform e-government untuk digital profiling, pemantauan web dan media sosial, pelacakan kebocoran data (leaked data tracking), serta analisis kata kunci otomatis.</p>
+              </div>
+            </article>
+            <article class="portfolio-item reveal">
+              <img src="assets/ref/portfolio-item182.jpg" alt="">
+              <div class="portfolio-scrim"></div>
+              <div class="portfolio-caption">
+                <p class="portfolio-client">Skomlek Mabes TNI</p>
+                <h3>Aplikasi Matkomlek Skomlek Mabes TNI</h3>
+                <p class="portfolio-meta">2022 · Instansi Pertahanan</p>
+              </div>
+              <div class="portfolio-overlay">
+                <p class="eyebrow">Instansi Pertahanan</p>
+                <h3>Aplikasi Matkomlek Skomlek Mabes TNI</h3>
+                <p>Platform berbasis web untuk pemantauan, validasi, dan evaluasi ulang aset sistem komunikasi dan elektronik beserta pemetaan kerentanannya.</p>
+              </div>
+            </article>
+            <article class="portfolio-item reveal">
+              <img src="assets/ref/portfolio-item183.jpg" alt="">
+              <div class="portfolio-scrim"></div>
+              <div class="portfolio-caption">
+                <p class="portfolio-client">Kementerian / Lembaga Terkait</p>
+                <h3>Aplikasi Pemetaan Perumahan</h3>
+                <p class="portfolio-meta">2023 · Geospatial &amp; GIS</p>
+              </div>
+              <div class="portfolio-overlay">
+                <p class="eyebrow">Geospatial &amp; GIS</p>
+                <h3>Aplikasi Pemetaan Perumahan</h3>
+                <p>Aplikasi pemetaan perumahan berbasis geospasial (GIS) untuk pengelolaan data lokasi hunian, informasi proyek, dan pemantauan berbasis wilayah.</p>
+              </div>
+            </article>
+            <article class="portfolio-item reveal">
+              <img src="assets/ref/portfolio-item184.jpg" alt="">
+              <div class="portfolio-scrim"></div>
+              <div class="portfolio-caption">
+                <p class="portfolio-client">Jakarta Futures Exchange (JFX)</p>
+                <h3>Website &amp; Digital Platform JFX.CO.ID</h3>
+                <p class="portfolio-meta">2024 · Bursa &amp; Korporasi</p>
+              </div>
+              <div class="portfolio-overlay">
+                <p class="eyebrow">Bursa &amp; Korporasi</p>
+                <h3>Website &amp; Digital Platform JFX.CO.ID</h3>
+                <p>Platform informasi digital resmi Jakarta Futures Exchange (jfx.co.id) yang dirancang untuk memperkuat kehadiran daring, komunikasi korporat, dan distribusi informasi.</p>
+              </div>
+            </article>
+            <article class="portfolio-item reveal">
+              <img src="assets/ref/portfolio-item185.jpg" alt="">
+              <div class="portfolio-scrim"></div>
+              <div class="portfolio-caption">
+                <p class="portfolio-client">PT Inti Sinergi Persada</p>
+                <h3>Corporate Platform PT ISP</h3>
+                <p class="portfolio-meta">2025 · Korporasi Nasional</p>
+              </div>
+              <div class="portfolio-overlay">
+                <p class="eyebrow">Korporasi Nasional</p>
+                <h3>Corporate Platform PT ISP</h3>
+                <p>Website korporat ptisp.id dan platform informasi digital terpadu untuk mendukung komunikasi bisnis dan penyampaian konten perusahaan.</p>
+              </div>
+            </article>
+            <article class="portfolio-item reveal">
+              <img src="assets/ref/portfolio-item186.jpg" alt="">
+              <div class="portfolio-scrim"></div>
+              <div class="portfolio-caption">
+                <p class="portfolio-client">Mom N Jo Network</p>
+                <h3>Integrated Spa &amp; Wellness System Mom N Jo</h3>
+                <p class="portfolio-meta">2025 · Enterprise POS &amp; Operations</p>
+              </div>
+              <div class="portfolio-overlay">
+                <p class="eyebrow">Enterprise POS &amp; Operations</p>
+                <h3>Integrated Spa &amp; Wellness System Mom N Jo</h3>
+                <p>Sistem manajemen spa dan wellness terintegrasi mencakup reservasi, kasir (POS), perawatan, manajemen terapis, paket layanan, dan pelaporan operasional.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 3. LAYANAN ============ -->
+    <section id="layanan" class="section section-surface">
+      <div class="container">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Layanan Kami</p>
+          <h2>Layanan rekayasa teknologi dan produk digital</h2>
+          <span class="separator-line"></span>
+          <p class="section-lead">Sebagai mitra teknologi end-to-end, GARISDev menggabungkan strategi teknologi, pengembangan aplikasi terpadu, integrasi sistem, dan inovasi untuk menghasilkan solusi yang praktis, scalable, serta sesuai kebutuhan bisnis nyata.</p>
+        </div>
+
+        <div class="service-grid">
+          <article class="service-card reveal">
+            <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></svg>
+            <h3>Digital Strategy &amp; Consulting</h3>
+            <p>Perencanaan arsitektur teknologi terpadu, analisis kelayakan sistem, dan penyusunan roadmap transformasi digital enterprise.</p>
+          </article>
+          <article class="service-card reveal">
+            <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+            <h3>Web Application Development</h3>
+            <p>Pengembangan aplikasi web modern yang scalable, aman, dan berkinerja tinggi sesuai kebutuhan proses bisnis nyata.</p>
+          </article>
+          <article class="service-card reveal">
+            <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+            <h3>Mobile App Development</h3>
+            <p>Pengembangan aplikasi mobile native (iOS &amp; Android) dan cross-platform dengan performa optimal untuk operasional bisnis.</p>
+          </article>
+          <article class="service-card reveal">
+            <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="18" r="3"/><circle cx="18" cy="6" r="3"/><path d="M18 9v3a3 3 0 0 1-3 3H9"/><path d="M6 15v-3a3 3 0 0 1 3-3h6"/></svg>
+            <h3>System Integration</h3>
+            <p>Integrasi sistem heterogen melalui arsitektur API terpadu, middleware aman, dan pipeline transmisi data antar-aplikasi.</p>
+          </article>
+          <article class="service-card reveal">
+            <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg>
+            <h3>Dashboard &amp; Business Intelligence</h3>
+            <p>Visualisasi data real-time, monitoring operasional, dan analitik data untuk memperkuat kontrol dan pengambilan keputusan manajemen.</p>
+          </article>
+          <article class="service-card reveal">
+            <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+            <h3>Maintenance &amp; Technology Support</h3>
+            <p>Layanan pemeliharaan sistem terencana, mitigasi keamanan berkala, dan optimalisasi performa teknologi secara berkelanjutan.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 4. PRODUK UNGGULAN ============ -->
+    <section id="produk" class="section section-white">
+      <div class="container">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Produk Unggulan</p>
+          <h2>7 platform unggulan siap pakai</h2>
+          <span class="separator-line"></span>
+          <p class="section-lead">Solusi perangkat lunak terintegrasi yang dirancang khusus untuk memecahkan tantangan operasional spesifik di berbagai sektor industri: perhotelan, hunian vertikal, pusat perbelanjaan, hingga manajemen ambulans.</p>
+        </div>
+
+        <div class="product-grid">
+          <article class="product-card reveal">
+            <div class="product-top"><span class="product-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.9 5.1L19 10l-5.1 1.9L12 17l-1.9-5.1L5 10l5.1-1.9L12 3z"/><path d="M19 16l.8 2.2L22 19l-2.2.8L19 22l-.8-2.2L16 19l2.2-.8L19 16z"/></svg></span><span class="product-badge">HOSPITALITY &amp; WELLNESS</span></div>
+            <h3>Wellora</h3>
+            <p class="product-sub">Spa &amp; Wellness Management System</p>
+            <p class="product-desc">Sistem operasional jaringan gerai spa, penjadwalan terapis presisi, POS modern, dan kontrol stok multi-cabang terintegrasi.</p>
+            <div class="module-list"><span>Booking</span><span>POS Kasir</span><span>Manajemen Terapis</span><span>Membership</span><span>Inventori</span><span>Laporan Pendapatan</span></div>
+          </article>
+          <article class="product-card reveal">
+            <div class="product-top"><span class="product-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2"/><path d="M9 22v-4h6v4"/><line x1="8" y1="6" x2="8.01" y2="6"/><line x1="12" y1="6" x2="12.01" y2="6"/><line x1="16" y1="6" x2="16.01" y2="6"/><line x1="8" y1="10" x2="8.01" y2="10"/><line x1="12" y1="10" x2="12.01" y2="10"/><line x1="16" y1="10" x2="16.01" y2="10"/></svg></span><span class="product-badge">PROPERTY MANAGEMENT</span></div>
+            <h3>ApartHub</h3>
+            <p class="product-sub">Residential &amp; Apartment Management Platform</p>
+            <p class="product-desc">Platform ekosistem hunian modern untuk pengelola gedung dan penghuni: auto-billing IPL, tiket perbaikan, dan visitor pass QR.</p>
+            <div class="module-list"><span>Aplikasi Penghuni</span><span>Auto-Billing IPL</span><span>Visitor Pass</span><span>Tiket Layanan</span><span>Booking Fasilitas</span><span>Executive Dashboard</span></div>
+          </article>
+          <article class="product-card reveal">
+            <div class="product-top"><span class="product-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M9 22V12h6v10"/></svg></span><span class="product-badge">COMMERCIAL &amp; RETAIL</span></div>
+            <h3>TenantHub</h3>
+            <p class="product-sub">Tenant &amp; Mall Management Platform</p>
+            <p class="product-desc">Portal pengelola kawasan komersial dan tenant: rekonsiliasi sewa, billing utilitas, izin kerja fit-out, dan antrean loading dock.</p>
+            <div class="module-list"><span>Portal Tenant</span><span>Billing Utilitas</span><span>Izin Kerja (Permit)</span><span>Jadwal Loading Dock</span><span>Tiket Layanan</span><span>Alur Kepatuhan</span></div>
+          </article>
+          <article class="product-card reveal">
+            <div class="product-top"><span class="product-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg></span><span class="product-badge">PROPERTY DEVELOPER</span></div>
+            <h3>Propera</h3>
+            <p class="product-sub">Property Developer Management Platform</p>
+            <p class="product-desc">Platform manajemen developer properti terpadu untuk mengelola proses penjualan unit dari prospek awal hingga serah terima fisik.</p>
+            <div class="module-list"><span>Manajemen Prospek (Lead)</span><span>Booking Unit</span><span>Inventori Unit</span><span>Penagihan Pembayaran</span><span>Serah Terima (Handover)</span><span>Layanan Purnajual</span></div>
+          </article>
+          <article class="product-card reveal">
+            <div class="product-top"><span class="product-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M5 21V7l8-4v18"/><path d="M19 21V11l-6-4"/><path d="M9 9v.01M9 12v.01M9 15v.01M9 18v.01"/></svg></span><span class="product-badge">HOTEL &amp; RESORT PMS</span></div>
+            <h3>Stayora</h3>
+            <p class="product-sub">Hotel Management &amp; Guest Experience Platform</p>
+            <p class="product-desc">Property Management System (PMS) untuk reservasi kamar instan, profil tamu, koordinasi housekeeping, dan analitik okupansi real-time.</p>
+            <div class="module-list"><span>Reservasi Kamar</span><span>Profil Tamu</span><span>Koordinasi Housekeeping</span><span>Room Service</span><span>Billing</span><span>Hotel Dashboard</span></div>
+          </article>
+          <article class="product-card reveal">
+            <div class="product-top"><span class="product-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="6" width="14" height="12" rx="2"/><path d="M15 10h3l3 3v3h-6z"/><circle cx="6" cy="18" r="2"/><circle cx="18" cy="18" r="2"/><path d="M8 18h8"/></svg></span><span class="product-badge">HEALTHCARE DISPATCH</span></div>
+            <h3>GoAmbulan</h3>
+            <p class="product-sub">Healthcare On-Demand Platform</p>
+            <p class="product-desc">Platform dispatching ambulans darurat dengan live GPS tracking armada, integrasi rumah sakit rujukan, dan navigasi rute tercepat.</p>
+            <div class="module-list"><span>Pemesanan Ambulans</span><span>Dispatching Darurat</span><span>Live GPS Tracking</span><span>Manajemen Perjalanan Pasien</span><span>Monitoring Operator</span></div>
+          </article>
+          <article class="product-card product-card-wide reveal">
+            <div class="product-wide-main">
+              <div class="product-top"><span class="product-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a4 4 0 0 0-4 4 4 4 0 0 0-2 7.46V16a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2v-2.54A4 4 0 0 0 16 6a4 4 0 0 0-4-4z"/><path d="M9 21h6"/><path d="M12 8v.01M9.5 11l-.5.5M14.5 11l.5.5M12 11v3"/></svg></span><span class="product-badge">AI &amp; INTELLIGENCE</span></div>
+              <h3>AIRA</h3>
+              <p class="product-sub">Advanced Intelligence Research &amp; Analytics</p>
+              <p class="product-desc">Platform analitik cerdas berbasis AI untuk pemantauan percakapan publik, deteksi sentimen real-time, dan pelaporan intelijen otomatis.</p>
+            </div>
+            <div class="module-list module-list-wide"><span>Riset Digital</span><span>Pemantauan Multi-Kanal</span><span>Analisis Sentimen</span><span>Workspace Investigasi</span><span>Pelaporan Intelijen</span></div>
+          </article>
+        </div>
+
+        <div class="solutions reveal">
+          <div class="solutions-head">
+            <div>
+              <p class="eyebrow">Katalog Solusi</p>
+              <h3>Solusi digital lainnya</h3>
+            </div>
+            <p>Katalog sistem informasi operasional yang siap disesuaikan dan diintegrasikan dengan infrastruktur teknologi organisasi Anda.</p>
+          </div>
+          <ul class="solutions-grid">
+            <li>E-Government Application System</li>
+            <li>Academic Information System</li>
+            <li>PSB / Student Admission Platform</li>
+            <li>Hospital Information System</li>
+            <li>Human Resource Information System (HRIS)</li>
+            <li>Inventory Management System</li>
+            <li>Retail Sales Information System</li>
+            <li>Finance &amp; Budget Planning System</li>
+            <li>Document &amp; Archive Management System</li>
+            <li>Correspondence Management System (E-Office)</li>
+            <li>Customer Relationship Management System (CRM)</li>
+            <li>Travel Umrah Management Platform</li>
+            <li>Dashboard &amp; Business Intelligence System</li>
+            <li>Custom Mobile Application</li>
+            <li>API Development &amp; System Integration</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 5. NILAI SPORTIF ============ -->
+    <section id="nilai" class="section section-surface">
+      <div class="container">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Budaya Perusahaan</p>
+          <h2>Tata nilai perusahaan SPORTIF</h2>
+          <span class="separator-line"></span>
+          <p class="section-lead">GARISDev memegang teguh tata nilai SPORTIF sebagai landasan profesionalisme, kualitas rekayasa, dan komitmen layanan berkelanjutan dalam setiap pengembangan produk dan kemitraan strategis.</p>
+        </div>
+
+        <div class="values-grid">
+          <article class="value-card reveal"><span class="value-letter">S</span><h3>Sustainability</h3><p>Mempertahankan kualitas layanan terbaik secara berkelanjutan bagi mitra klien.</p></article>
+          <article class="value-card reveal"><span class="value-letter">P</span><h3>Professional</h3><p>Mengedepankan kompetensi, efektivitas, dan efisiensi serta bertanggung jawab penuh atas hasil pekerjaan.</p></article>
+          <article class="value-card reveal"><span class="value-letter">O</span><h3>Observe</h3><p>Mengamati perkembangan teknologi terkini agar dapat diaplikasikan secara tepat guna.</p></article>
+          <article class="value-card reveal"><span class="value-letter">R</span><h3>Relationship</h3><p>Membangun kemitraan strategis yang baik dan bersinergi untuk mencapai harapan perusahaan serta stakeholder.</p></article>
+          <article class="value-card reveal"><span class="value-letter">T</span><h3>Trust</h3><p>Menjaga kepercayaan pelanggan dan stakeholder di setiap tahap kerja sama.</p></article>
+          <article class="value-card reveal"><span class="value-letter">I</span><h3>Innovation</h3><p>Menciptakan inovasi dan terobosan baru dalam rangka memberikan solusi terbaik.</p></article>
+          <article class="value-card reveal"><span class="value-letter">F</span><h3>Flexible</h3><p>Mampu beradaptasi dan menyesuaikan diri dengan perkembangan teknologi serta kebutuhan bisnis terkini.</p></article>
+          <article class="value-card value-cta reveal">
+            <p class="eyebrow">Mulai Kolaborasi</p>
+            <h3>Butuh mitra rekayasa yang bisa diandalkan?</h3>
+            <a href="#kontak" class="btn btn-outline-light btn-sm">Hubungi Kami <span aria-hidden="true">→</span></a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 6. VISION BAND ============ -->
+    <section class="vision-band">
+      <div class="band-bg" role="img" aria-label="Tim profesional sedang berdiskusi di ruang kerja"></div>
+      <div class="band-scrim"></div>
+      <div class="container band-inner reveal">
+        <p class="band-eyebrow">Visi Kami</p>
+        <p class="band-quote">Menjadi mitra teknologi terpercaya yang mendorong transformasi digital dan pertumbuhan berkelanjutan.</p>
+        <span class="band-line"></span>
+      </div>
+    </section>
+
+    <!-- ============ 7. INTERLUDE ============ -->
+    <section class="interlude">
+      <div class="interlude-bg" role="img" aria-label="Koridor kantor modern dengan partisi kaca dan cahaya alami"></div>
+      <div class="interlude-scrim"></div>
+      <div class="container interlude-inner reveal">
+        <p class="interlude-quote">“Sistem yang baik tidak menarik perhatian. Ia hanya bekerja, setiap hari, tanpa kompromi.”</p>
+        <p class="interlude-credit">Filosofi rekayasa GARISDev</p>
+      </div>
+    </section>
+
+    <!-- ============ 8. TEKNOLOGI ============ -->
+    <section id="teknologi" class="tech-section">
+      <div class="tech-split">
+        <div class="tech-image" role="img" aria-label="Suasana kerja tim teknologi GARISDev"></div>
+        <div class="tech-content">
+          <div class="tech-inner reveal">
+            <p class="eyebrow">Teknologi</p>
+            <h2>Teknologi &amp; kapabilitas infrastruktur</h2>
+            <p class="tech-lead">Penguasaan teknologi berstandar enterprise yang siap diimplementasikan dan diintegrasikan dengan sistem eksisting organisasi Anda.</p>
+            <div class="tech-grid">
+              <div class="tech-item"><span class="tech-check">✓</span><div><h3>Mobile &amp; Web Framework</h3><p>Android Native · iOS Apple Developer · Flutter · Laravel · Goravel · Inertia.js</p></div></div>
+              <div class="tech-item"><span class="tech-check">✓</span><div><h3>Enterprise Database</h3><p>Oracle Database · Microsoft SQL Server · Tibero Database · PostgreSQL · MySQL</p></div></div>
+              <div class="tech-item"><span class="tech-check">✓</span><div><h3>Business Intelligence &amp; Analytics</h3><p>Tableau · IBM Cognos</p></div></div>
+              <div class="tech-item"><span class="tech-check">✓</span><div><h3>Infrastructure, Network &amp; Communication</h3><p>Linux · Dell Server · MikroTik · Cloudflare · Tailscale · Asterisk VoIP</p></div></div>
+            </div>
+            <a href="#kontak" class="btn btn-outline-dark">Diskusikan Arsitektur <span aria-hidden="true">→</span></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 9. KONTAK ============ -->
+    <section id="kontak" class="section section-white">
+      <div class="container">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Hubungi Kami</p>
+          <h2>Konsultasi solusi &amp; profil perusahaan</h2>
+          <span class="separator-line"></span>
+          <p class="section-lead">Diskusikan kebutuhan arsitektur perangkat lunak, sistem E-Government, dan integrasi enterprise Anda langsung bersama tim teknis GARISDev.</p>
+        </div>
+
+        <div class="contact-grid">
+          <div>
+            <div class="contact-card reveal">
+              <img src="assets/rapat-instansi-korporat-2.png" alt="Tim GARISDev bersama perwakilan klien dalam sesi diskusi proyek" class="contact-photo">
+              <div class="contact-address">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                <div><span>Kantor Pusat</span><a href="https://maps.google.com/?q=18+Office+Park+Suite+Jl+TB+Simatupang+18+Jakarta+Selatan" target="_blank" rel="noopener noreferrer">18 Office Park Suite, Jl. TB. Simatupang No. 18, RT 002/RW 001, Kel. Kebagusan, Kec. Pasar Minggu, Jakarta Selatan 12520</a></div>
+              </div>
+            </div>
+            <div class="contact-list reveal">
+              <a href="tel:02180674603"><span class="contact-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span><span><small>Telepon Kantor</small><strong>(021) 80674603</strong></span><span class="contact-arrow">↗</span></a>
+              <a href="https://wa.me/6281387297524?text=Halo%20GARISDev%2C%20saya%20ingin%20berkonsultasi%20mengenai%20kebutuhan%20pengembangan%20sistem%20dan%20solusi%20teknologi%20informasi." target="_blank" rel="noopener noreferrer"><span class="contact-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg></span><span><small>WhatsApp Konsultasi</small><strong>[PHONE_1]</strong></span><span class="contact-arrow">↗</span></a>
+              <a href="mailto:[EMAIL_1]"><span class="contact-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></span><span><small>Email Korespondensi</small><strong>[EMAIL_1]</strong></span><span class="contact-arrow">↗</span></a>
+              <a href="https://www.garisdev.co.id" target="_blank" rel="noopener noreferrer"><span class="contact-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></span><span><small>Website Resmi</small><strong>www.garisdev.co.id</strong></span><span class="contact-arrow">↗</span></a>
+            </div>
+          </div>
+
+          <div class="profile-card reveal">
+            <span class="profile-bar"></span>
+            <img src="assets/garisdev-logo-dark-cropped.png" alt="GARISDev" class="profile-logo">
+            <h3>PT Global Agra Ripta Solusindo</h3>
+            <p>Unduh dokumen resmi profil perusahaan untuk kebutuhan evaluasi internal, pengadaan B2B/pemerintah, rekam jejak portofolio, dan arsitektur kapabilitas sistem.</p>
+            <dl class="profile-meta">
+              <div><dt>Format File</dt><dd>PDF</dd></div>
+              <div><dt>Ukuran Dokumen</dt><dd>2,1 MB</dd></div>
+              <div><dt>Bahasa</dt><dd>Indonesia</dd></div>
+              <div><dt>Edisi Terbitan</dt><dd>2026</dd></div>
+            </dl>
+            <a href="assets/documents/company-profile-garisdev-2026.pdf" download="COMPANY-PROFILE-GARISDEV-2026.pdf" class="btn btn-brand profile-download js-download">Unduh Company Profile</a>
+            <p class="profile-note">Unduhan langsung tanpa formulir registrasi.</p>
+            <a href="https://wa.me/6281387297524?text=Halo%20GARISDev%2C%20saya%20ingin%20berkonsultasi%20mengenai%20kebutuhan%20pengembangan%20sistem%20dan%20solusi%20teknologi%20informasi." target="_blank" rel="noopener noreferrer" class="profile-chat">Butuh respons cepat? Chat WhatsApp <span aria-hidden="true">↗</span></a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-cta">
+        <div>
+          <p class="eyebrow">Mulai Kolaborasi</p>
+          <h2>Mari bangun sesuatu yang hebat bersama</h2>
+          <p>Hubungi tim teknis kami dan sampaikan kebutuhan sistem Anda untuk mendapatkan estimasi awal.</p>
+        </div>
+        <a href="#kontak" class="btn btn-outline-light">Mulai Proyek <span aria-hidden="true">→</span></a>
+      </div>
+
+      <div class="footer-grid">
+        <div>
+          <img src="assets/garisdev-logo-white-cropped.png" alt="GARISDev, PT Global Agra Ripta Solusindo" class="footer-logo">
+          <p class="footer-legal">PT Global Agra Ripta Solusindo</p>
+          <p class="footer-address">18 Office Park Suite, Jl. TB. Simatupang No. 18, RT 002/RW 001, Kel. Kebagusan, Kec. Pasar Minggu, Jakarta Selatan 12520</p>
+          <p class="footer-since">Beroperasi sejak 2014 di Jakarta Selatan, Indonesia.</p>
+        </div>
+        <div>
+          <h3>Navigasi</h3>
+          <ul class="footer-nav">
+            <li><a href="#klien">Klien &amp; Proyek</a></li>
+            <li><a href="#layanan">Layanan</a></li>
+            <li><a href="#produk">Produk Unggulan</a></li>
+            <li><a href="#nilai">Nilai SPORTIF</a></li>
+            <li><a href="#teknologi">Teknologi</a></li>
+            <li><a href="#kontak">Kontak</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Kontak</h3>
+          <ul class="footer-contact">
+            <li><a href="tel:02180674603">(021) 80674603</a></li>
+            <li><a href="mailto:[EMAIL_1]">[EMAIL_1]</a></li>
+            <li><a href="https://wa.me/6281387297524?text=Halo%20GARISDev%2C%20saya%20ingin%20berkonsultasi%20mengenai%20kebutuhan%20pengembangan%20sistem%20dan%20solusi%20teknologi%20informasi." target="_blank" rel="noopener noreferrer">[PHONE_1]</a></li>
+            <li><a href="https://www.garisdev.co.id" target="_blank" rel="noopener noreferrer">www.garisdev.co.id</a></li>
+          </ul>
+          <div class="footer-socials">
+            <a href="https://wa.me/6281387297524?text=Halo%20GARISDev%2C%20saya%20ingin%20berkonsultasi%20mengenai%20kebutuhan%20pengembangan%20sistem%20dan%20solusi%20teknologi%20informasi." target="_blank" rel="noopener noreferrer" aria-label="WhatsApp GARISDev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg></a>
+            <a href="mailto:[EMAIL_1]" aria-label="Email GARISDev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></a>
+            <a href="https://www.garisdev.co.id" target="_blank" rel="noopener noreferrer" aria-label="Website GARISDev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>© 2026 PT Global Agra Ripta Solusindo (GARISDev). Seluruh Hak Cipta Dilindungi.</span>
+        <div><span class="footer-loc">Jakarta Selatan, Indonesia</span><a href="#atas">Kembali ke Atas ↑</a></div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
