@@ -30,13 +30,13 @@
   --glass-fill: rgb(255 255 255 / .075);
   --magenta: #a9016e;
   --magenta-hi: #e04bb0;
-  --amber: #fffbe6;
-  --amber-hover: #fff7cc;
+  --amber: #ffcc00;
+  --amber-hover: #ffd633;
   --on-amber: #07060b;
   --danger: #ff8a80;
   --success: #6fe3a1;
   --glow-magenta: 169 1 110;
-  --glow-amber: 255 251 230;
+  --glow-amber: 255 204 0;
   --radius-panel: 24px;
   --radius-field: 14px;
   --radius-pill: 999px;
@@ -422,7 +422,7 @@ html:not(.js) .site-header { background: var(--bg-0); }
   }
 }
 .button-hero .icon { color: var(--amber); }
-.button-hero:hover { border-color: var(--amber-hover); background-color: rgb(246 243 248 / .15); }
+.button-hero:hover { border-color: var(--amber); background-color: rgb(246 243 248 / .15); }
 .scroll-cue {
   position: absolute;
   z-index: 3;
@@ -1117,6 +1117,31 @@ html:not(.js) .form-submit { display: none; }
 .finder:has(input[value="corporate"]:checked) [data-sector]:not([data-sector~="corporate"]),
 .finder:has(input[value="travel"]:checked) [data-sector]:not([data-sector~="travel"]) { display: none; }
 
+/* About page hero (ID / EN) */
+.view[data-page="about"] > .about-hero {
+  display: grid;
+  place-items: center;
+  min-height: clamp(340px, 62svh, 640px);
+  padding: calc(var(--header-height) + 32px) var(--outer) 32px;
+  text-align: center;
+  background-color: var(--bg-0);
+  background-image: linear-gradient(180deg, rgb(7 6 11 / .73), rgb(7 6 11 / .38) 48%, rgb(7 6 11 / .62)), url("assets/garisdev-about-background.webp");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.view[data-page="about"] > .about-hero h1 {
+  color: var(--text-1);
+  font-size: clamp(2.5rem, 6vw, 5.5rem);
+  text-shadow: 0 2px 24px rgb(7 6 11 / .5);
+}
+@media (width < 768px) {
+  .view[data-page="about"] > .about-hero {
+    min-height: clamp(300px, 52svh, 480px);
+    background-position: 52% center;
+  }
+}
+
   </style>
 </head>
 <body>
@@ -1234,12 +1259,8 @@ html:not(.js) .form-submit { display: none; }
 </div>
 
 <div class="view" id="id-about" lang="id" data-locale="id" data-page="about" data-title="Tentang GARISDev | Software House dari Jakarta" data-description="Profil PT Global Agra Ripta Solusindo (GARISDev), pengalaman sejak 2014, visi dan misi, legalitas, dan teknologi.">
-<section class="page-intro" aria-labelledby="id-about-title">
-  <div class="wrap intro-grid">
-    <h1 id="id-about-title" tabindex="-1"><span class="intro-line">Software house</span> <span class="intro-line">dari Jakarta</span></h1>
-    <p>PT Global Agra Ripta Solusindo (GARISDev) fokus pada pengembangan software dan rekayasa teknologi informasi.</p>
-
-  </div>
+<section class="about-hero" aria-labelledby="id-about-title">
+  <h1 id="id-about-title" tabindex="-1">Tentang Kami</h1>
 </section>
 <section class="section section-alt" aria-labelledby="id-about-experience-title">
   <div class="wrap split">
@@ -1882,12 +1903,8 @@ html:not(.js) .form-submit { display: none; }
 </div>
 
 <div class="view" id="en-about" lang="en" data-locale="en" data-page="about" data-title="About GARISDev | A Software House in Jakarta" data-description="Profile of PT Global Agra Ripta Solusindo (GARISDev), including our experience since 2014, vision, mission, legal information and technology.">
-<section class="page-intro" aria-labelledby="en-about-title">
-  <div class="wrap intro-grid">
-    <h1 id="en-about-title" tabindex="-1"><span class="intro-line">A software house</span> <span class="intro-line">in Jakarta</span></h1>
-    <p>PT Global Agra Ripta Solusindo (GARISDev) focuses on software development and information technology engineering.</p>
-
-  </div>
+<section class="about-hero" aria-labelledby="en-about-title">
+  <h1 id="en-about-title" tabindex="-1">About Us</h1>
 </section>
 <section class="section section-alt" aria-labelledby="en-about-experience-title">
   <div class="wrap split">
