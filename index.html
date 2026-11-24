@@ -1257,6 +1257,108 @@ html:not(.js) .form-submit { display: none; }
   }
 }
 
+
+/* About page: combined vision and mission (ID / EN) */
+.view[data-page="about"] > .about-purpose {
+  padding-block: clamp(3.25rem, 6vw, 6rem);
+  background: radial-gradient(ellipse at 0% 35%, rgb(var(--glow-magenta) / .09), transparent 56%), var(--bg-0);
+}
+.about-purpose .purpose-heading {
+  margin-bottom: clamp(26px, 4vw, 48px);
+}
+.about-purpose .purpose-kicker {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+  color: var(--magenta-hi);
+  font-size: var(--small);
+  font-weight: 500;
+  letter-spacing: .15em;
+  text-transform: uppercase;
+}
+.about-purpose .purpose-kicker::before {
+  content: "";
+  width: 40px;
+  height: 2px;
+  border-radius: var(--radius-pill);
+  background: linear-gradient(90deg, var(--magenta), var(--magenta-hi));
+}
+.about-purpose .purpose-row {
+  display: grid;
+  grid-template-columns: minmax(0, .7fr) minmax(0, 1.8fr);
+  gap: clamp(24px, 5vw, 64px);
+  align-items: start;
+  padding-block: clamp(24px, 3.4vw, 44px);
+  border-top: 1px solid var(--hairline);
+}
+.about-purpose .purpose-index {
+  display: block;
+  margin-bottom: 10px;
+  color: var(--magenta-hi);
+  font-size: var(--small);
+  letter-spacing: .13em;
+  font-weight: 500;
+}
+.about-purpose .purpose-label h3 {
+  font-size: clamp(1.55rem, 2.6vw, 2.4rem);
+  font-weight: 300;
+  line-height: 1.15;
+  letter-spacing: -.035em;
+}
+.about-purpose .purpose-vision blockquote {
+  color: var(--text-1);
+  font-size: clamp(1.25rem, 2.15vw, 1.85rem);
+  font-weight: 400;
+  line-height: 1.4;
+  letter-spacing: -.02em;
+  text-wrap: pretty;
+}
+.about-purpose .purpose-vision blockquote strong {
+  color: var(--magenta-hi);
+  font-weight: 500;
+}
+.about-purpose .purpose-vision p { margin-top: 14px; }
+.about-purpose .purpose-missions {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: purpose-mission;
+  color: var(--text-2);
+}
+.about-purpose .purpose-missions li {
+  counter-increment: purpose-mission;
+  display: grid;
+  grid-template-columns: 2em minmax(0, 1fr);
+  gap: 12px;
+  align-items: baseline;
+  padding-block: 12px;
+}
+.about-purpose .purpose-missions li:first-child { padding-top: 0; }
+.about-purpose .purpose-missions li + li { border-top: 1px solid var(--hairline); }
+.about-purpose .purpose-missions li::before {
+  content: counter(purpose-mission, decimal-leading-zero);
+  color: var(--magenta-hi);
+  font-size: var(--small);
+  font-weight: 500;
+  font-variant-numeric: tabular-nums;
+}
+.about-purpose .purpose-quote {
+  margin-top: 18px;
+  padding-left: 16px;
+  border-left: 2px solid var(--magenta-hi);
+  color: var(--text-1);
+  font-size: clamp(1rem, 1.5vw, 1.25rem);
+  font-weight: 400;
+  line-height: 1.5;
+  font-style: italic;
+}
+@media (max-width: 680px) {
+  .about-purpose .purpose-row { grid-template-columns: minmax(0, 1fr); gap: 16px; }
+  .about-purpose .purpose-index { margin-bottom: 6px; }
+  .about-purpose .purpose-missions li { gap: 8px; }
+}
+
   </style>
 </head>
 <body>
@@ -1409,25 +1511,38 @@ html:not(.js) .form-submit { display: none; }
     </div>
   </div>
 </section>
-<section class="section glow-center" aria-labelledby="id-about-vision-title">
-  <div class="wrap split">
-    <div data-reveal><h2 id="id-about-vision-title">Visi</h2></div>
-    <div data-reveal><div class="prose vision-body">
-  <blockquote>Menjadi mitra teknologi terpercaya yang mendorong transformasi digital dan pertumbuhan berkelanjutan.</blockquote>
-  <p>Kami membangun kepercayaan dengan memberikan solusi dan menciptakan terobosan yang memberi nilai tambah bagi customer dan stakeholder.</p>
-</div></div>
-  </div>
-</section>
-<section class="section section-alt" aria-labelledby="id-about-mission-title">
-  <div class="wrap split">
-    <div data-reveal><h2 id="id-about-mission-title">Misi</h2></div>
-    <div data-reveal><ul class="mission-list prose">
-<li>Memberikan pelayanan terbaik untuk memenuhi ekspektasi customer dan stakeholder dengan mengutamakan kualitas hasil pekerjaan.</li>
-<li>Mengoptimalkan penggunaan teknologi terkini untuk mengembangkan aplikasi yang andal, aman, dan memberi nilai tambah bagi customer.</li>
-<li>Mengembangkan tim yang unggul dalam kualitas, kreativitas, inovasi, dan karakter.</li>
-<li>Membangun kemitraan strategis dengan customer dan stakeholder untuk mencapai tujuan yang saling menguntungkan.</li>
-<li>Menjadikan setiap produk dan sistem yang kami kembangkan sebagai karya terbaik yang bisa kami tinggalkan.</li>
-</ul><blockquote class="mission-quote prose">Hasil dan reputasi adalah kombinasi wajib untuk sukses.</blockquote></div>
+<section class="section about-purpose" aria-labelledby="id-about-purpose-title">
+  <div class="wrap">
+    <div class="purpose-heading" data-reveal>
+      <p class="purpose-kicker">Arah &amp; Tujuan</p>
+      <h2 id="id-about-purpose-title">Visi &amp; Misi</h2>
+    </div>
+    <div class="purpose-row" aria-labelledby="id-about-vision-title">
+      <div class="purpose-label" data-reveal>
+        <span class="purpose-index" aria-hidden="true">01 / VISI</span>
+        <h3 id="id-about-vision-title">Visi Kami</h3>
+      </div>
+      <div class="purpose-vision" data-reveal>
+        <blockquote>Menjadi mitra teknologi terpercaya yang mendorong <strong>transformasi digital</strong> dan pertumbuhan berkelanjutan.</blockquote>
+        <p>Kami membangun kepercayaan dengan memberikan solusi dan menciptakan terobosan yang memberi nilai tambah bagi customer dan stakeholder.</p>
+      </div>
+    </div>
+    <div class="purpose-row" aria-labelledby="id-about-mission-title">
+      <div class="purpose-label" data-reveal>
+        <span class="purpose-index" aria-hidden="true">02 / MISI</span>
+        <h3 id="id-about-mission-title">Misi Kami</h3>
+      </div>
+      <div data-reveal>
+        <ol class="purpose-missions" role="list">
+          <li><span>Memberikan pelayanan terbaik untuk memenuhi ekspektasi customer dan stakeholder dengan mengutamakan kualitas hasil pekerjaan.</span></li>
+          <li><span>Mengoptimalkan penggunaan teknologi terkini untuk mengembangkan aplikasi yang andal, aman, dan memberi nilai tambah bagi customer.</span></li>
+          <li><span>Mengembangkan tim yang unggul dalam kualitas, kreativitas, inovasi, dan karakter.</span></li>
+          <li><span>Membangun kemitraan strategis dengan customer dan stakeholder untuk mencapai tujuan yang saling menguntungkan.</span></li>
+          <li><span>Menjadikan setiap produk dan sistem yang kami kembangkan sebagai karya terbaik yang bisa kami tinggalkan.</span></li>
+        </ol>
+        <blockquote class="purpose-quote">Hasil dan reputasi adalah kombinasi wajib untuk sukses.</blockquote>
+      </div>
+    </div>
   </div>
 </section>
 <section class="section section-alt" aria-labelledby="id-about-legal-title">
@@ -2076,25 +2191,38 @@ html:not(.js) .form-submit { display: none; }
     </div>
   </div>
 </section>
-<section class="section glow-center" aria-labelledby="en-about-vision-title">
-  <div class="wrap split">
-    <div data-reveal><h2 id="en-about-vision-title">Vision</h2></div>
-    <div data-reveal><div class="prose vision-body">
-  <blockquote>To be a trusted technology partner that drives digital transformation and sustainable growth.</blockquote>
-  <p>We build trust by delivering solutions and finding new ways to add value for customers and stakeholders.</p>
-</div></div>
-  </div>
-</section>
-<section class="section section-alt" aria-labelledby="en-about-mission-title">
-  <div class="wrap split">
-    <div data-reveal><h2 id="en-about-mission-title">Mission</h2></div>
-    <div data-reveal><ul class="mission-list prose">
-<li>Deliver excellent service that meets the expectations of customers and stakeholders by prioritizing the quality of our work.</li>
-<li>Use current technology to develop reliable, secure applications that add value for customers.</li>
-<li>Develop a team that excels in quality, creativity, innovation and character.</li>
-<li>Build strategic partnerships with customers and stakeholders to achieve shared goals and mutual benefit.</li>
-<li>Make every product and system we develop part of a legacy we can be proud of.</li>
-</ul><blockquote class="mission-quote prose">Results and reputation are both essential to success.</blockquote></div>
+<section class="section about-purpose" aria-labelledby="en-about-purpose-title">
+  <div class="wrap">
+    <div class="purpose-heading" data-reveal>
+      <p class="purpose-kicker">Our Purpose</p>
+      <h2 id="en-about-purpose-title">Vision &amp; Mission</h2>
+    </div>
+    <div class="purpose-row" aria-labelledby="en-about-vision-title">
+      <div class="purpose-label" data-reveal>
+        <span class="purpose-index" aria-hidden="true">01 / VISION</span>
+        <h3 id="en-about-vision-title">Our Vision</h3>
+      </div>
+      <div class="purpose-vision" data-reveal>
+        <blockquote>To be a trusted technology partner that drives <strong>digital transformation</strong> and sustainable growth.</blockquote>
+        <p>We build trust by delivering solutions and finding new ways to add value for customers and stakeholders.</p>
+      </div>
+    </div>
+    <div class="purpose-row" aria-labelledby="en-about-mission-title">
+      <div class="purpose-label" data-reveal>
+        <span class="purpose-index" aria-hidden="true">02 / MISSION</span>
+        <h3 id="en-about-mission-title">Our Mission</h3>
+      </div>
+      <div data-reveal>
+        <ol class="purpose-missions" role="list">
+          <li><span>Deliver excellent service that meets the expectations of customers and stakeholders by prioritizing the quality of our work.</span></li>
+          <li><span>Use current technology to develop reliable, secure applications that add value for customers.</span></li>
+          <li><span>Develop a team that excels in quality, creativity, innovation and character.</span></li>
+          <li><span>Build strategic partnerships with customers and stakeholders to achieve shared goals and mutual benefit.</span></li>
+          <li><span>Make every product and system we develop part of a legacy we can be proud of.</span></li>
+        </ol>
+        <blockquote class="purpose-quote">Results and reputation are both essential to success.</blockquote>
+      </div>
+    </div>
   </div>
 </section>
 <section class="section section-alt" aria-labelledby="en-about-legal-title">
