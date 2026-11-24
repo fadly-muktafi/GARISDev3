@@ -1117,6 +1117,121 @@ html:not(.js) .form-submit { display: none; }
 .finder:has(input[value="corporate"]:checked) [data-sector]:not([data-sector~="corporate"]),
 .finder:has(input[value="travel"]:checked) [data-sector]:not([data-sector~="travel"]) { display: none; }
 
+
+
+/* About page who we are section (ID / EN) */
+.view[data-page="about"] > .about-intro {
+  padding-block: clamp(3rem, 5vw, 5rem);
+  overflow: hidden;
+  background-image: radial-gradient(ellipse at 88% 112%, rgb(var(--glow-magenta) / .12), transparent 52%);
+}
+.about-intro-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.08fr) minmax(0, 1fr);
+  gap: clamp(24px, 3vw, 40px);
+  align-items: center;
+}
+.about-intro-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+  color: #dcb8f5;
+  font-size: var(--small);
+  font-weight: 500;
+  letter-spacing: .15em;
+  text-transform: uppercase;
+}
+.about-intro-eyebrow::before {
+  content: "";
+  width: 34px;
+  height: 2px;
+  border-radius: var(--radius-pill);
+  background: linear-gradient(90deg, #a766ff, var(--magenta-hi));
+}
+.about-intro-title {
+  font-size: clamp(1.85rem, 3vw, 2.65rem);
+  line-height: 1.15;
+  letter-spacing: -.035em;
+  text-wrap: initial;
+}
+.about-intro-title strong {
+  display: block;
+  color: #c184f7;
+  font-weight: 600;
+}
+.about-intro-body {
+  margin-top: 18px;
+  max-width: 56ch;
+  font-size: 1rem;
+  line-height: 1.65;
+}
+.about-intro-stats {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: start;
+  gap: 12px;
+  padding: 12px 0 12px clamp(18px, 2.3vw, 30px);
+  border-left: 1px solid var(--hairline-strong);
+}
+.about-intro-stat {
+  text-align: center;
+  min-width: 0;
+}
+.about-intro-stat-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  margin-bottom: 14px;
+  color: #c184f7;
+}
+.about-intro-stat-icon svg {
+  width: 36px;
+  height: 36px;
+  stroke: currentColor;
+  fill: none;
+  stroke-width: 1.6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.about-intro-stat-value {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 48px;
+  font-size: clamp(1.9rem, 3vw, 2.65rem);
+  line-height: 1.05;
+  letter-spacing: -.04em;
+  font-weight: 600;
+  color: var(--text-1);
+}
+.about-intro-stat-value--text {
+  font-size: clamp(1.05rem, 1.6vw, 1.4rem);
+  line-height: 1.15;
+  letter-spacing: -.02em;
+  text-wrap: balance;
+}
+.about-intro-stat-label {
+  margin-top: 10px;
+  font-size: .9rem;
+  line-height: 1.45;
+  color: var(--text-2);
+  text-wrap: balance;
+}
+@media (max-width: 900px) {
+  .about-intro-grid { grid-template-columns: minmax(0, 1fr); gap: 28px; }
+  .about-intro-stats { padding: 24px 0 0; border-left: 0; border-top: 1px solid var(--hairline-strong); }
+  .about-intro-stat-value--text { font-size: 1.2rem; }
+}
+@media (max-width: 420px) {
+  .about-intro-stats { gap: 8px; }
+  .about-intro-stat-icon svg { width: 30px; height: 30px; }
+  .about-intro-stat-value { font-size: 1.7rem; }
+  .about-intro-stat-value--text { font-size: 1rem; }
+  .about-intro-stat-label { font-size: .78rem; }
+}
+
 /* About page hero (ID / EN) */
 .view[data-page="about"] > .about-hero {
   display: grid;
@@ -1262,13 +1377,36 @@ html:not(.js) .form-submit { display: none; }
 <section class="about-hero" aria-labelledby="id-about-title">
   <h1 id="id-about-title" tabindex="-1">Tentang Kami</h1>
 </section>
-<section class="section section-alt" aria-labelledby="id-about-experience-title">
-  <div class="wrap split">
-    <div data-reveal><h2 id="id-about-experience-title">Pengalaman sejak 2014</h2></div>
-    <div data-reveal><div class="prose">
-  <p>Kami mulai berkarya di bidang rekayasa teknologi informasi pada 2014. Pengalaman itu menjadi bekal kami untuk merancang software yang sesuai dengan kebutuhan operasional klien.</p>
-  <p>Pada 2021, kami memperluas bidang pengembangan software dan rekayasa teknologi informasi untuk menciptakan produk yang memberi nilai tambah bagi customer dan stakeholder.</p>
-</div></div>
+<section class="section section-alt about-intro" aria-labelledby="id-about-who-title">
+  <div class="wrap about-intro-grid">
+    <div class="about-intro-copy" data-reveal>
+      <p class="about-intro-eyebrow">Siapa Kami</p>
+      <h2 class="about-intro-title" id="id-about-who-title">Mitra Teknologi untuk <strong>Transformasi Digital</strong></h2>
+      <p class="about-intro-body">GARISDev adalah perusahaan solusi teknologi yang mengembangkan software dan rekayasa sistem informasi untuk meningkatkan efisiensi, produktivitas, dan nilai bisnis bagi pelanggan.</p>
+    </div>
+    <div class="about-intro-stats" data-reveal>
+      <article class="about-intro-stat" aria-label="Mulai berkarya sejak 2014">
+        <div class="about-intro-stat-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"></rect><path d="M16 3v4M8 3v4M3 11h18"></path></svg></div>
+        <div>
+          <div class="about-intro-stat-value">2014</div>
+          <p class="about-intro-stat-label">Mulai Berkarya</p>
+        </div>
+      </article>
+      <article class="about-intro-stat" aria-label="Lebih dari sepuluh solusi dan produk digital">
+        <div class="about-intro-stat-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m12 3 8 4.5-8 4.5-8-4.5 8-4.5Z"></path><path d="m4 12 8 4.5 8-4.5"></path><path d="m4 16.5 8 4.5 8-4.5"></path></svg></div>
+        <div>
+          <div class="about-intro-stat-value">10+</div>
+          <p class="about-intro-stat-label">Solusi &amp; Produk Digital</p>
+        </div>
+      </article>
+      <article class="about-intro-stat" aria-label="Klien dari beragam industri dan institusi">
+        <div class="about-intro-stat-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="10" cy="7" r="4"></circle><path d="M22 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg></div>
+        <div>
+          <div class="about-intro-stat-value about-intro-stat-value--text">Klien Beragam</div>
+          <p class="about-intro-stat-label">Industri &amp; Institusi</p>
+        </div>
+      </article>
+    </div>
   </div>
 </section>
 <section class="section glow-center" aria-labelledby="id-about-vision-title">
@@ -1906,13 +2044,36 @@ html:not(.js) .form-submit { display: none; }
 <section class="about-hero" aria-labelledby="en-about-title">
   <h1 id="en-about-title" tabindex="-1">About Us</h1>
 </section>
-<section class="section section-alt" aria-labelledby="en-about-experience-title">
-  <div class="wrap split">
-    <div data-reveal><h2 id="en-about-experience-title">Experience since 2014</h2></div>
-    <div data-reveal><div class="prose">
-  <p>We started working in information technology engineering in 2014. That experience informs how we design software around the operational needs of our clients.</p>
-  <p>In 2021, we expanded into more areas of software development and IT engineering to build products that add value for customers and stakeholders.</p>
-</div></div>
+<section class="section section-alt about-intro" aria-labelledby="en-about-who-title">
+  <div class="wrap about-intro-grid">
+    <div class="about-intro-copy" data-reveal>
+      <p class="about-intro-eyebrow">Who We Are</p>
+      <h2 class="about-intro-title" id="en-about-who-title">Technology Partner for <strong>Digital Transformation</strong></h2>
+      <p class="about-intro-body">GARISDev is a technology solutions company that develops software and information systems engineering to improve efficiency, productivity, and business value for customers.</p>
+    </div>
+    <div class="about-intro-stats" data-reveal>
+      <article class="about-intro-stat" aria-label="Started working in 2014">
+        <div class="about-intro-stat-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"></rect><path d="M16 3v4M8 3v4M3 11h18"></path></svg></div>
+        <div>
+          <div class="about-intro-stat-value">2014</div>
+          <p class="about-intro-stat-label">Started Working</p>
+        </div>
+      </article>
+      <article class="about-intro-stat" aria-label="More than ten digital solutions and products">
+        <div class="about-intro-stat-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m12 3 8 4.5-8 4.5-8-4.5 8-4.5Z"></path><path d="m4 12 8 4.5 8-4.5"></path><path d="m4 16.5 8 4.5 8-4.5"></path></svg></div>
+        <div>
+          <div class="about-intro-stat-value">10+</div>
+          <p class="about-intro-stat-label">Digital Solutions &amp; Products</p>
+        </div>
+      </article>
+      <article class="about-intro-stat" aria-label="Clients from diverse industries and institutions">
+        <div class="about-intro-stat-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="10" cy="7" r="4"></circle><path d="M22 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg></div>
+        <div>
+          <div class="about-intro-stat-value about-intro-stat-value--text">Diverse Clients</div>
+          <p class="about-intro-stat-label">Industries &amp; Institutions</p>
+        </div>
+      </article>
+    </div>
   </div>
 </section>
 <section class="section glow-center" aria-labelledby="en-about-vision-title">
