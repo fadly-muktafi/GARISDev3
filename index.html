@@ -1256,6 +1256,44 @@ html:not(.js) .form-submit { display: none; }
   .about-intro-stat-label { font-size: .78rem; }
 }
 
+/* Clients page hero (ID / EN) */
+.view[data-page="clients"] > .clients-hero {
+  display: grid;
+  place-items: center;
+  min-height: clamp(340px, 62svh, 640px);
+  padding: calc(var(--header-height) + 32px) var(--outer) 32px;
+  text-align: center;
+  background-color: var(--bg-0);
+  background-image: linear-gradient(180deg, rgb(7 6 11 / .68), rgb(7 6 11 / .36) 48%, rgb(7 6 11 / .62)), url("assets/garisdev-clients-background.webp");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.view[data-page="clients"] > .clients-hero .clients-hero-copy {
+  width: min(760px, 100%);
+}
+.view[data-page="clients"] > .clients-hero h1 {
+  color: var(--text-1);
+  font-size: clamp(2.5rem, 6vw, 5.5rem);
+  text-shadow: 0 2px 24px rgb(7 6 11 / .5);
+}
+.view[data-page="clients"] > .clients-hero p {
+  margin: 20px auto 0;
+  max-width: 60ch;
+  color: var(--text-1);
+  font-size: clamp(1rem, 1.45vw, 1.25rem);
+  line-height: 1.55;
+  text-shadow: 0 2px 12px rgb(7 6 11 / .85);
+  text-wrap: balance;
+}
+@media (width < 768px) {
+  .view[data-page="clients"] > .clients-hero {
+    min-height: clamp(300px, 52svh, 480px);
+    background-position: center;
+  }
+  .view[data-page="clients"] > .clients-hero p { margin-top: 14px; }
+}
+
 /* About page hero (ID / EN) */
 .view[data-page="about"] > .about-hero {
   display: grid;
@@ -1954,11 +1992,10 @@ html:not(.js) .form-submit { display: none; }
 </div>
 
 <div class="view" id="id-clients" lang="id" data-locale="id" data-page="clients" data-title="Klien dan Proyek | GARISDev" data-description="Klien GARISDev dari instansi pemerintah dan sektor swasta, serta proyek terpilih dari 2019 sampai 2025.">
-<section class="page-intro" aria-labelledby="id-clients-title">
-  <div class="wrap intro-grid">
+<section class="clients-hero" aria-labelledby="id-clients-title">
+  <div class="clients-hero-copy">
     <h1 id="id-clients-title" tabindex="-1">Klien GARISDev</h1>
     <p>Instansi pemerintah dan perusahaan yang sudah bekerja sama dengan kami.</p>
-
   </div>
 </section>
 <section class="section section-alt" aria-labelledby="id-clients-logos-title">
@@ -2622,11 +2659,10 @@ html:not(.js) .form-submit { display: none; }
 </div>
 
 <div class="view" id="en-clients" lang="en" data-locale="en" data-page="clients" data-title="Clients and Projects | GARISDev" data-description="GARISDev clients across government institutions and the private sector, with selected projects from 2019 to 2025.">
-<section class="page-intro" aria-labelledby="en-clients-title">
-  <div class="wrap intro-grid">
+<section class="clients-hero" aria-labelledby="en-clients-title">
+  <div class="clients-hero-copy">
     <h1 id="en-clients-title" tabindex="-1">GARISDev clients</h1>
     <p>Government institutions and companies we have worked with.</p>
-
   </div>
 </section>
 <section class="section section-alt" aria-labelledby="en-clients-logos-title">
