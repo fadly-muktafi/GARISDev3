@@ -907,6 +907,7 @@ html:not(.js) .site-header { background: var(--bg-0); }
   padding-bottom: var(--section-space);
   background: radial-gradient(ellipse 64% 85% at 82% 27%, rgb(var(--glow-magenta) / .16), transparent 82%);
 }
+.contact-surface .intro-grid h1 { font-size: clamp(2rem, 4.6vw, 3.375rem); }
 .contact-grid { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 4fr); gap: clamp(34px, 6vw, 90px); align-items: start; }
 .form-panel, .contact-info { padding: clamp(20px, 3vw, 41px); }
 .form-panel h2, .contact-info h2 { font-size: 1.7rem; font-weight: 400; }
@@ -927,7 +928,17 @@ html:not(.js) .site-header { background: var(--bg-0); }
   color: var(--text-1);
   font-size: 1rem;
 }
-.field select { padding-right: 28px; }
+.field select {
+  appearance: none;
+  padding-inline-end: 36px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none'%3E%3Cpath d='m4 6 4 4 4-4' stroke='%23f6f3f8' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-position: right 12px center;
+  background-repeat: no-repeat;
+  background-size: 16px;
+}
+@media (forced-colors: active) {
+  .field select { appearance: auto; background-image: none; }
+}
 .field :is(input, select, textarea):focus-visible { border-color: var(--amber); outline-offset: 1px; }
 .field textarea { min-height: 122px; resize: vertical; }
 .field [aria-invalid="true"], .field [aria-invalid="true"]:focus-visible { border-color: var(--danger); }
@@ -1072,6 +1083,7 @@ html:not(.js) .form-submit { display: none; }
   .page-intro-compact { padding-bottom: 26px; }
   .intro-grid { gap: 17px; }
   .intro-line { display: block; }
+  .contact-surface .intro-grid h1 { font-size: clamp(1.5rem, 8.35vw, 2.5rem); }
   .value-row { grid-template-columns: 43px minmax(0, 1fr); gap: 5px 12px; padding-block: 16px; }
   .value-initial { grid-row: span 2; min-height: 48px; }
   .value-row p { grid-column: 2; }
@@ -1959,7 +1971,7 @@ html:not(.js) .form-submit { display: none; }
 <div class="contact-surface">
   <section class="page-intro page-intro-compact" aria-labelledby="id-contact-title">
   <div class="wrap intro-grid">
-    <h1 id="id-contact-title" tabindex="-1"><span class="intro-line">Mari bahas</span> <span class="intro-line">proyek Anda</span></h1>
+    <h1 id="id-contact-title" tabindex="-1"><span class="intro-line">Wujudkan Transformasi</span> <span class="intro-line">Digital Bersama Kami</span></h1>
     <p>Isi formulir di bawah, atau hubungi kami langsung.</p>
     <div class="contact-quick"><a class="button button-text" href="https://wa.me/6281389441927?text=Halo+GARISDev%2C+saya+ingin+menjadwalkan+konsultasi." target="_blank" rel="noopener"><span>Buka WhatsApp</span><svg class="icon icon-small" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20.7 11.7a8.6 8.6 0 0 1-12.8 7.6L4 20.5l1.1-3.9a8.6 8.6 0 1 1 15.6-4.9Z"/><path d="M9 7.8c-.9 0-1.6.8-1.6 1.7 0 2.8 3.7 6.5 6.5 6.5.9 0 1.7-.7 1.7-1.6l-2.3-1.2-.9.9a6.8 6.8 0 0 1-2.5-2.5l.9-.9-1.2-2.3Z"/></svg></a></div>
   </div>
@@ -2441,7 +2453,7 @@ html:not(.js) .form-submit { display: none; }
 <div class="contact-surface">
   <section class="page-intro page-intro-compact" aria-labelledby="en-contact-title">
   <div class="wrap intro-grid">
-    <h1 id="en-contact-title" tabindex="-1"><span class="intro-line">Let&#x27;s discuss your</span> <span class="intro-line">project</span></h1>
+    <h1 id="en-contact-title" tabindex="-1"><span class="intro-line">Shape your digital</span> <span class="intro-line">transformation with us</span></h1>
     <p>Fill in the form below, or reach us directly.</p>
     <div class="contact-quick"><a class="button button-text" href="https://wa.me/6281389441927?text=Hello+GARISDev%2C+I+would+like+to+schedule+a+consultation." target="_blank" rel="noopener"><span>Open WhatsApp</span><svg class="icon icon-small" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20.7 11.7a8.6 8.6 0 0 1-12.8 7.6L4 20.5l1.1-3.9a8.6 8.6 0 1 1 15.6-4.9Z"/><path d="M9 7.8c-.9 0-1.6.8-1.6 1.7 0 2.8 3.7 6.5 6.5 6.5.9 0 1.7-.7 1.7-1.6l-2.3-1.2-.9.9a6.8 6.8 0 0 1-2.5-2.5l.9-.9-1.2-2.3Z"/></svg></a></div>
   </div>
