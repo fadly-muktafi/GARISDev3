@@ -33,8 +33,6 @@
   --amber: #fffbe6;
   --amber-hover: #fff7cc;
   --on-amber: #07060b;
-  --danger: #ff8a80;
-  --success: #6fe3a1;
   --glow-magenta: 169 1 110;
   --glow-amber: 255 251 230;
   --radius-panel: 24px;
@@ -915,87 +913,36 @@ html:not(.js) .site-header { background: var(--bg-0); }
   background: radial-gradient(ellipse 64% 85% at 82% 27%, rgb(var(--glow-magenta) / .16), transparent 82%);
 }
 .contact-surface .intro-grid h1 { font-size: clamp(2rem, 4.6vw, 3.375rem); }
-.contact-grid { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 4fr); gap: clamp(34px, 6vw, 90px); align-items: start; }
-.form-panel, .contact-info { padding: clamp(20px, 3vw, 41px); }
-.form-panel h2, .contact-info h2 { font-size: 1.7rem; font-weight: 400; }
-.form-panel h2 + p { margin: 10px 0 22px; font-size: var(--small); }
-.form-fields { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 17px 15px; }
-.field { display: grid; align-content: start; min-width: 0; row-gap: 6px; }
-.field-wide { grid-column: 1 / -1; }
-.field label, .form-datetime legend { color: var(--text-1); font-size: var(--small); font-weight: 500; }
-.field label span { color: var(--text-2); font-weight: 400; }
-.field input, .field select, .field textarea {
-  width: 100%;
-  min-width: 0;
-  min-height: 52px;
-  padding: 10px 12px;
-  border: 1px solid var(--hairline-strong);
-  border-radius: var(--radius-field);
-  background: var(--bg-2);
-  color: var(--text-1);
-  font-size: 1rem;
+.contact-info {
+  display: grid;
+  grid-template-columns: minmax(0, 4fr) minmax(0, 5fr);
+  align-items: center;
+  gap: clamp(24px, 4vw, 56px);
+  padding: clamp(20px, 3.5vw, 36px);
+  border: 1px solid var(--hairline);
+  border-radius: var(--radius-panel);
+  background: var(--bg-1);
 }
-.field select {
-  appearance: none;
-  padding-inline-end: 36px;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none'%3E%3Cpath d='m4 6 4 4 4-4' stroke='%23f6f3f8' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
-  background-position: right 12px center;
-  background-repeat: no-repeat;
-  background-size: 16px;
-}
-@media (forced-colors: active) {
-  .field select { appearance: auto; background-image: none; }
-}
-.field :is(input, select, textarea):focus-visible { border-color: var(--amber); outline-offset: 1px; }
-.field textarea { min-height: 122px; resize: vertical; }
-.field [aria-invalid="true"], .field [aria-invalid="true"]:focus-visible { border-color: var(--danger); }
-.field-error { color: var(--danger); font-size: var(--small); line-height: 1.4; }
-.form-datetime { display: grid; grid-template-columns: 1fr 1fr; min-width: 0; padding: 0; margin: 0; border: 0; gap: 12px; }
-.form-datetime legend { margin-bottom: 7px; }
-.form-datetime .field label { color: var(--text-2); font-weight: 400; }
-.consent { padding-top: 4px; }
-.consent-line { display: flex; gap: 11px; min-height: 44px; align-items: start; }
-.consent label { cursor: pointer; font-weight: 400; line-height: 1.55; }
-.consent input[type="checkbox"] {
-  flex: 0 0 24px;
-  width: 24px;
-  min-height: 24px;
-  height: 24px;
-  margin: 1px 0 0;
-  padding: 0;
-  accent-color: var(--amber);
-}
-.form-submit { margin-top: 5px; }
-html:not(.js) .form-submit { display: none; }
-.form-error-box {
-  padding: 14px 16px;
-  margin: 0 0 18px;
-  border: 1px solid rgb(255 138 128 / .5);
-  border-radius: var(--radius-field);
-  background: rgb(255 138 128 / .065);
-  color: var(--danger);
-  font-size: var(--small);
-}
-.form-error-box p { color: var(--danger); font-weight: 500; }
-.form-error-box ul { margin: 7px 0 0; padding-left: 20px; }
-.form-feedback .icon { color: var(--success); width: 27px; height: 27px; margin-bottom: 14px; }
-.form-feedback h2 { margin-bottom: 11px; }
-.form-feedback .button { margin-top: 20px; }
-.contact-info dl { margin-top: 20px; }
-.contact-info dl > div { padding-block: 14px; border-bottom: 1px solid var(--hairline); }
-.contact-info dt { letter-spacing: -.01em; }
-.contact-info dd { margin: 4px 0 0; color: var(--text-2); font-size: 1rem; overflow-wrap: anywhere; }
-.contact-info .button { margin-top: 12px; }
-.contact-quick { display: none; }
+.contact-info h2 { font-size: clamp(1.55rem, 3vw, 2.25rem); font-weight: 400; }
+.contact-info dl { display: flex; flex-wrap: wrap; gap: 16px clamp(22px, 3vw, 38px); margin-top: 22px; }
+.contact-info dl > div { max-width: 100%; }
+.contact-office { flex-basis: 100%; }
+.contact-info dt { color: var(--text-2); font-size: var(--small); }
+.contact-info dd { margin-top: 3px; font-size: 1rem; line-height: 1.5; overflow-wrap: anywhere; }
+.contact-office dd { max-width: 39ch; }
+.contact-office dd span { display: block; color: var(--text-2); }
+.contact-info dd a { text-decoration-color: var(--text-3); text-underline-offset: 3px; }
+.contact-info dd a:hover { text-decoration-color: currentColor; }
+.contact-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 16px; margin-top: 24px; }
+.contact-actions .button { box-shadow: none; }
+.contact-actions > span, .contact-privacy { color: var(--text-2); font-size: var(--small); }
+.contact-privacy { display: inline-flex; align-items: center; min-height: 24px; margin-top: 12px; text-underline-offset: 3px; }
+.contact-privacy:hover { color: var(--text-1); }
 .office-map {
   display: block;
   width: 100%;
-  height: auto;
-  aspect-ratio: 4 / 3;
-  min-height: 220px;
-  max-height: 300px;
-  margin-top: 16px;
-  border: 1px solid var(--hairline-strong);
+  height: 100%;
+  border: 0;
   border-radius: var(--radius-field);
   background: var(--bg-2);
 }
@@ -1057,8 +1004,6 @@ html:not(.js) .form-submit { display: none; }
   .product-device { width: min(45%, 226px); top: 37px; }
   .value-initial { font-size: var(--heading); min-height: 64px; }
   .home-values { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .contact-grid { grid-template-columns: minmax(0, 1fr); gap: 38px; }
-  .contact-quick { display: inline-flex; margin-top: 13px; }
   .privacy-layout { grid-template-columns: minmax(0, 1fr); }
 }
 @media (width < 768px) {
@@ -1110,7 +1055,8 @@ html:not(.js) .form-submit { display: none; }
   .product-art { min-height: 270px; }
   .product-art figcaption { top: 9px; right: 13px; }
   .product-device { width: min(51%, 217px); top: 34px; }
-  .form-fields { grid-template-columns: minmax(0, 1fr); }
+  .contact-info { grid-template-columns: minmax(0, 1fr); }
+  .office-map { height: clamp(220px, 60vw, 340px); min-height: 0; }
   .footer-main { grid-template-columns: minmax(0, 1fr); }
 }
 @media (max-width: 350px) {
@@ -1984,131 +1930,36 @@ html:not(.js) .form-submit { display: none; }
 </section>
 </div>
 
-<div class="view" id="id-contact" lang="id" data-locale="id" data-page="contact" data-title="Jadwalkan Konsultasi | Hubungi GARISDev" data-description="Ceritakan kebutuhan Anda. Hubungi GARISDev lewat formulir konsultasi, telepon, WhatsApp, atau email.">
+<div class="view" id="id-contact" lang="id" data-locale="id" data-page="contact" data-title="Jadwalkan Konsultasi | Hubungi GARISDev" data-description="Hubungi tim GARISDev lewat WhatsApp, telepon, atau email. Lihat lokasi kantor kami di Jakarta Selatan.">
 <div class="contact-surface">
   <section class="page-intro page-intro-compact" aria-labelledby="id-contact-title">
-  <div class="wrap intro-grid">
-    <h1 id="id-contact-title" tabindex="-1"><span class="intro-line">Wujudkan Transformasi</span> <span class="intro-line">Digital Bersama Kami</span></h1>
-    <p>Isi formulir di bawah, atau hubungi kami langsung.</p>
-    <div class="contact-quick"><a class="button button-text" href="https://wa.me/6281389441927?text=Halo+GARISDev%2C+saya+ingin+menjadwalkan+konsultasi." target="_blank" rel="noopener"><span>Buka WhatsApp</span><svg class="icon icon-small" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20.7 11.7a8.6 8.6 0 0 1-12.8 7.6L4 20.5l1.1-3.9a8.6 8.6 0 1 1 15.6-4.9Z"/><path d="M9 7.8c-.9 0-1.6.8-1.6 1.7 0 2.8 3.7 6.5 6.5 6.5.9 0 1.7-.7 1.7-1.6l-2.3-1.2-.9.9a6.8 6.8 0 0 1-2.5-2.5l.9-.9-1.2-2.3Z"/></svg></a></div>
-  </div>
-</section>
-  <div class="wrap contact-grid">
-    <section class="glass form-panel" aria-labelledby="id-contact-form-title">
-  <div data-form-content>
-    <h2 id="id-contact-form-title">Permintaan konsultasi</h2>
-    <p>Pratinjau formulir. Isian di sini tidak dikirim.</p>
-    <form method="dialog" data-contact-form>
-      <div class="form-error-box" data-error-summary role="alert" tabindex="-1" hidden>
-        <p></p>
-        <ul></ul>
+    <div class="wrap intro-grid">
+      <h1 id="id-contact-title" tabindex="-1"><span class="intro-line">Wujudkan Transformasi</span> <span class="intro-line">Digital Bersama Kami</span></h1>
+      <p>Diskusikan kebutuhan teknologi Anda dengan tim kami.</p>
+    </div>
+  </section>
+  <section class="wrap contact-info" aria-labelledby="id-contact-info-title">
+    <div class="contact-details">
+      <h2 id="id-contact-info-title">Kontak GARISDev</h2>
+      <address>
+        <dl>
+          <div class="contact-office"><dt>Alamat kantor</dt><dd>18 Office Park Suite <span>Jl. TB. Simatupang No. 18 RT 002/001, Kel. Kebagusan, Kec. Pasar Minggu, Jakarta Selatan</span></dd></div>
+          <div><dt>Telepon</dt><dd><a href="tel:+622180674603">(021) 8067 4603</a></dd></div>
+          <div><dt>Email</dt><dd><a href="mailto:relation@garisdev.co.id">relation@garisdev.co.id</a></dd></div>
+        </dl>
+      </address>
+      <div class="contact-actions">
+        <a class="button button-primary" href="https://wa.me/6281389441927?text=Halo+GARISDev%2C+saya+ingin+menjadwalkan+konsultasi." target="_blank" rel="noopener"><svg class="icon icon-small" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20.7 11.7a8.6 8.6 0 0 1-12.8 7.6L4 20.5l1.1-3.9a8.6 8.6 0 1 1 15.6-4.9Z"/><path d="M9 7.8c-.9 0-1.6.8-1.6 1.7 0 2.8 3.7 6.5 6.5 6.5.9 0 1.7-.7 1.7-1.6l-2.3-1.2-.9.9a6.8 6.8 0 0 1-2.5-2.5l.9-.9-1.2-2.3Z"/></svg><span>Chat via WhatsApp</span></a>
+        <span>+62 813-8944-1927</span>
       </div>
-      <div class="form-fields">
-        <div class="field">
-  <label for="id-name">Nama lengkap <span>(wajib)</span></label>
-  <input id="id-name" name="name" type="text" aria-describedby="id-name-error" autocomplete="name" required>
-  <small class="field-error" id="id-name-error" hidden></small>
-</div>
-        <div class="field">
-  <label for="id-organization">Instansi atau perusahaan <span>(wajib)</span></label>
-  <input id="id-organization" name="organization" type="text" aria-describedby="id-organization-error" autocomplete="organization" required>
-  <small class="field-error" id="id-organization-error" hidden></small>
-</div>
-        <div class="field">
-  <label for="id-email">Email <span>(wajib)</span></label>
-  <input id="id-email" name="email" type="email" aria-describedby="id-email-error" autocomplete="email" required>
-  <small class="field-error" id="id-email-error" hidden></small>
-</div>
-        <div class="field">
-  <label for="id-phone">Telepon</label>
-  <input id="id-phone" name="phone" type="tel" aria-describedby="id-phone-error" autocomplete="tel">
-  <small class="field-error" id="id-phone-error" hidden></small>
-</div>
-        <div class="field field-wide">
-  <label for="id-topik">Topik <span>(wajib)</span></label>
-  <select id="id-topik" name="topik" aria-describedby="id-topik-error" required>
-  <option value="">Pilih topik</option>
-  <option value="Konsultasi umum">Konsultasi umum</option>
-  <optgroup label="Layanan"><option value="Digital Strategy &amp; Consulting">Digital Strategy &amp; Consulting</option>
-<option value="Web Application Development">Web Application Development</option>
-<option value="Mobile App Development">Mobile App Development</option>
-<option value="System Integration">System Integration</option>
-<option value="Dashboard &amp; Business Intelligence">Dashboard &amp; Business Intelligence</option>
-<option value="Maintenance &amp; Technology Support">Maintenance &amp; Technology Support</option></optgroup>
-  <optgroup label="Produk"><option value="Wellora">Wellora</option>
-<option value="ApartHub">ApartHub</option>
-<option value="TenantHub">TenantHub</option>
-<option value="Propera">Propera</option>
-<option value="Stayora">Stayora</option>
-<option value="GoAmbulan">GoAmbulan</option>
-<option value="AIRA">AIRA</option></optgroup>
-  <optgroup label="Bidang usaha"><option value="Properti">Properti</option>
-<option value="Hospitality &amp; Wellness">Hospitality &amp; Wellness</option>
-<option value="Kesehatan">Kesehatan</option>
-<option value="Pemerintahan">Pemerintahan</option>
-<option value="Pendidikan">Pendidikan</option>
-<option value="Korporasi &amp; Ritel">Korporasi &amp; Ritel</option>
-<option value="Travel">Travel</option></optgroup>
-  <option value="Lainnya">Lainnya</option>
-</select>
-  <small class="field-error" id="id-topik-error" hidden></small>
-</div>
-        <div class="field field-wide">
-  <label for="id-message">Pesan <span>(wajib)</span></label>
-  <textarea id="id-message" name="message" rows="5" aria-describedby="id-message-error" required></textarea>
-  <small class="field-error" id="id-message-error" hidden></small>
-</div>
-        <fieldset class="form-datetime field-wide">
-          <legend>Tanggal dan jam preferensi (opsional)</legend>
-          <div class="field">
-  <label for="id-date">Tanggal</label>
-  <input id="id-date" name="date" type="date" aria-describedby="id-date-error">
-  <small class="field-error" id="id-date-error" hidden></small>
-</div>
-          <div class="field">
-  <label for="id-time">Jam</label>
-  <input id="id-time" name="time" type="time" aria-describedby="id-time-error">
-  <small class="field-error" id="id-time-error" hidden></small>
-</div>
-        </fieldset>
-        <div class="field field-wide consent">
-          <div class="consent-line">
-            <input id="id-consent" name="consent" type="checkbox" aria-describedby="id-consent-error" required>
-            <label for="id-consent">Saya setuju data ini digunakan untuk menindaklanjuti permintaan saya sesuai <a class="inline-link" href="#id-privacy">Kebijakan Privasi</a>. (wajib)</label>
-          </div>
-          <small class="field-error" id="id-consent-error" hidden></small>
-        </div>
-        <div class="field-wide form-submit">
-          <button type="submit" class="button button-primary">Kirim Permintaan</button>
-        </div>
-      </div>
-      <noscript><p>Hubungi kami langsung lewat email atau WhatsApp.</p></noscript>
-    </form>
-  </div>
-  <div class="form-feedback" data-form-feedback hidden>
-    <svg class="icon" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="m4 12 5 5L20 6"/></svg>
-    <h2 id="id-contact-success-title" tabindex="-1">Simulasi berhasil</h2>
-    <p>Isian Anda lolos validasi. Formulir pratinjau ini tidak mengirim data.</p>
-    <button class="button button-glass" type="button" data-form-reset>Isi lagi</button>
-  </div>
-</section>
-    <section class="glass contact-info" aria-labelledby="id-contact-info-title">
-  <h2 id="id-contact-info-title">Kontak GARISDev</h2>
-  <address>
-    <dl>
-      <div><dt>Alamat kantor</dt><dd>18 Office Park Suite, Jl. TB. Simatupang No. 18 RT 002/001, Kel. Kebagusan, Kec. Pasar Minggu, Jakarta Selatan</dd></div>
-      <div><dt>Telepon</dt><dd><a class="inline-link" href="tel:+622180674603">(021) 8067 4603</a></dd></div>
-      <div><dt>Email</dt><dd><a class="inline-link" href="mailto:relation@garisdev.co.id">relation@garisdev.co.id</a></dd></div>
-      <div><dt>WhatsApp</dt><dd>+62 813-8944-1927<br><a class="button button-glass" href="https://wa.me/6281389441927?text=Halo+GARISDev%2C+saya+ingin+menjadwalkan+konsultasi." target="_blank" rel="noopener"><span>Buka WhatsApp</span><svg class="icon icon-small" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20.7 11.7a8.6 8.6 0 0 1-12.8 7.6L4 20.5l1.1-3.9a8.6 8.6 0 1 1 15.6-4.9Z"/><path d="M9 7.8c-.9 0-1.6.8-1.6 1.7 0 2.8 3.7 6.5 6.5 6.5.9 0 1.7-.7 1.7-1.6l-2.3-1.2-.9.9a6.8 6.8 0 0 1-2.5-2.5l.9-.9-1.2-2.3Z"/></svg></a></dd></div>
-    </dl>
-  </address>
-  <iframe class="office-map" title="Peta lokasi kantor GARISDev di Google Maps" width="600" height="450" loading="lazy" referrerpolicy="no-referrer" src="https://www.google.com/maps?cid=11716542209608870254&amp;output=embed&amp;hl=id"></iframe>
-</section>
-  </div>
+      <a class="contact-privacy" href="#id-privacy">Kebijakan Privasi</a>
+    </div>
+    <iframe class="office-map" title="Peta lokasi kantor GARISDev di Google Maps" width="600" height="450" loading="lazy" referrerpolicy="no-referrer" src="https://www.google.com/maps?cid=11716542209608870254&amp;output=embed&amp;hl=id"></iframe>
+  </section>
 </div>
 </div>
 
-<div class="view" id="id-privacy" lang="id" data-locale="id" data-page="privacy" data-title="Kebijakan Privasi | GARISDev" data-description="Draf kebijakan privasi untuk formulir konsultasi GARISDev.">
+<div class="view" id="id-privacy" lang="id" data-locale="id" data-page="privacy" data-title="Kebijakan Privasi | GARISDev" data-description="Draf kebijakan privasi untuk komunikasi dengan GARISDev dan penggunaan layanan pihak ketiga.">
 <section class="page-intro page-intro-compact" aria-labelledby="id-privacy-title">
   <div class="wrap intro-grid">
     <h1 id="id-privacy-title" tabindex="-1">Kebijakan Privasi</h1>
@@ -2119,11 +1970,16 @@ html:not(.js) .form-submit { display: none; }
 <div class="wrap privacy-layout">
   <nav class="privacy-toc" aria-label="Daftar isi">
     <h2>Daftar isi</h2>
-    <ul class="clean-list"><li><a href="#id-privacy-data">Data yang dikumpulkan</a></li><li><a href="#id-privacy-purpose">Tujuan dan persetujuan</a></li><li><a href="#id-privacy-storage">Penyimpanan dan keamanan</a></li><li><a href="#id-privacy-services">Layanan pihak ketiga</a></li><li><a href="#id-privacy-rights">Hak atas data pribadi</a></li><li><a href="#id-privacy-updates">Perubahan kebijakan</a></li></ul>
+    <ul class="clean-list"><li><a href="#id-privacy-data">Data yang diterima</a></li><li><a href="#id-privacy-purpose">Tujuan penggunaan</a></li><li><a href="#id-privacy-storage">Penyimpanan dan keamanan</a></li><li><a href="#id-privacy-services">Layanan pihak ketiga</a></li><li><a href="#id-privacy-rights">Hak atas data pribadi</a></li><li><a href="#id-privacy-updates">Perubahan kebijakan</a></li></ul>
   </nav>
   <div class="prose privacy-copy">
-    <p>Draf untuk peninjauan. Formulir pada pratinjau ini tidak mengirim atau menyimpan isian.</p>
-    <section aria-labelledby="id-privacy-data"><h2 id="id-privacy-data">Data yang dikumpulkan</h2><p>Formulir konsultasi meminta nama, instansi atau perusahaan, email, topik, dan pesan. Anda dapat menambahkan telepon serta preferensi tanggal dan jam.</p></section><section aria-labelledby="id-privacy-purpose"><h2 id="id-privacy-purpose">Tujuan dan persetujuan</h2><p>Informasi digunakan untuk meninjau kebutuhan Anda dan menindaklanjuti permintaan konsultasi. Persetujuan diminta melalui checkbox pada formulir.</p></section><section aria-labelledby="id-privacy-storage"><h2 id="id-privacy-storage">Penyimpanan dan keamanan</h2><p>Permintaan konsultasi akan disimpan di sistem GARISDev dengan akses terbatas kepada tim yang menangani permintaan. Masa retensi sedang ditetapkan.</p></section><section aria-labelledby="id-privacy-services"><h2 id="id-privacy-services">Layanan pihak ketiga</h2><p>Cloudflare Turnstile direncanakan untuk mencegah spam. Penyedia email untuk notifikasi permintaan masih ditentukan. Analitik situs direncanakan tanpa cookie pelacak.</p></section><section aria-labelledby="id-privacy-rights"><h2 id="id-privacy-rights">Hak atas data pribadi</h2><p>Anda dapat mengajukan permintaan terkait data pribadi, termasuk akses dan koreksi, melalui email GARISDev.</p><p><a class="inline-link" href="mailto:relation@garisdev.co.id">relation@garisdev.co.id</a></p><p><a class="inline-link" href="https://peraturan.bpk.go.id/Details/229798/uu-no-27-tahun-2022" rel="noopener" target="_blank">UU Nomor 27 Tahun 2022 tentang Pelindungan Data Pribadi</a></p></section><section aria-labelledby="id-privacy-updates"><h2 id="id-privacy-updates">Perubahan kebijakan</h2><p>Pembaruan kebijakan ini akan ditampilkan di halaman ini. Hubungi kami melalui email jika Anda memiliki pertanyaan.</p><p><a class="inline-link" href="mailto:relation@garisdev.co.id">relation@garisdev.co.id</a></p></section>
+    <p>Draf untuk peninjauan. Halaman Kontak tidak menyediakan formulir.</p>
+    <section aria-labelledby="id-privacy-data"><h2 id="id-privacy-data">Data yang diterima</h2><p>Jika Anda menghubungi GARISDev lewat telepon, email, atau WhatsApp, kami dapat menerima informasi kontak dan isi pesan yang Anda sampaikan.</p></section>
+    <section aria-labelledby="id-privacy-purpose"><h2 id="id-privacy-purpose">Tujuan penggunaan</h2><p>Informasi yang Anda sampaikan digunakan untuk memahami kebutuhan Anda dan menindaklanjuti permintaan konsultasi.</p></section>
+    <section aria-labelledby="id-privacy-storage"><h2 id="id-privacy-storage">Penyimpanan dan keamanan</h2><p>Untuk pertanyaan tentang penyimpanan atau penanganan informasi yang Anda sampaikan secara langsung, hubungi kami melalui email.</p></section>
+    <section aria-labelledby="id-privacy-services"><h2 id="id-privacy-services">Layanan pihak ketiga</h2><p>Halaman Kontak memuat Google Maps untuk menampilkan lokasi kantor dan menautkan ke WhatsApp. Penggunaan layanan tersebut tunduk pada kebijakan privasi masing-masing penyedia.</p></section>
+    <section aria-labelledby="id-privacy-rights"><h2 id="id-privacy-rights">Hak atas data pribadi</h2><p>Anda dapat mengajukan permintaan terkait data pribadi, termasuk akses dan koreksi, melalui email GARISDev.</p><p><a class="inline-link" href="mailto:relation@garisdev.co.id">relation@garisdev.co.id</a></p><p><a class="inline-link" href="https://peraturan.bpk.go.id/Details/229798/uu-no-27-tahun-2022" rel="noopener" target="_blank">UU Nomor 27 Tahun 2022 tentang Pelindungan Data Pribadi</a></p></section>
+    <section aria-labelledby="id-privacy-updates"><h2 id="id-privacy-updates">Perubahan kebijakan</h2><p>Pembaruan kebijakan ini akan ditampilkan di halaman ini. Hubungi kami melalui email jika Anda memiliki pertanyaan.</p><p><a class="inline-link" href="mailto:relation@garisdev.co.id">relation@garisdev.co.id</a></p></section>
   </div>
 </div>
 <section class="cta-band" aria-labelledby="id-privacy-cta">
@@ -2466,131 +2322,36 @@ html:not(.js) .form-submit { display: none; }
 </section>
 </div>
 
-<div class="view" id="en-contact" lang="en" data-locale="en" data-page="contact" data-title="Schedule a Consultation | Contact GARISDev" data-description="Tell us what you need. Contact GARISDev about a consultation by form, phone, WhatsApp or email.">
+<div class="view" id="en-contact" lang="en" data-locale="en" data-page="contact" data-title="Schedule a Consultation | Contact GARISDev" data-description="Reach GARISDev by WhatsApp, phone or email. Find our office in South Jakarta.">
 <div class="contact-surface">
   <section class="page-intro page-intro-compact" aria-labelledby="en-contact-title">
-  <div class="wrap intro-grid">
-    <h1 id="en-contact-title" tabindex="-1"><span class="intro-line">Shape your digital</span> <span class="intro-line">transformation with us</span></h1>
-    <p>Fill in the form below, or reach us directly.</p>
-    <div class="contact-quick"><a class="button button-text" href="https://wa.me/6281389441927?text=Hello+GARISDev%2C+I+would+like+to+schedule+a+consultation." target="_blank" rel="noopener"><span>Open WhatsApp</span><svg class="icon icon-small" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20.7 11.7a8.6 8.6 0 0 1-12.8 7.6L4 20.5l1.1-3.9a8.6 8.6 0 1 1 15.6-4.9Z"/><path d="M9 7.8c-.9 0-1.6.8-1.6 1.7 0 2.8 3.7 6.5 6.5 6.5.9 0 1.7-.7 1.7-1.6l-2.3-1.2-.9.9a6.8 6.8 0 0 1-2.5-2.5l.9-.9-1.2-2.3Z"/></svg></a></div>
-  </div>
-</section>
-  <div class="wrap contact-grid">
-    <section class="glass form-panel" aria-labelledby="en-contact-form-title">
-  <div data-form-content>
-    <h2 id="en-contact-form-title">Consultation request</h2>
-    <p>Form preview. Entries here are not sent.</p>
-    <form method="dialog" data-contact-form>
-      <div class="form-error-box" data-error-summary role="alert" tabindex="-1" hidden>
-        <p></p>
-        <ul></ul>
+    <div class="wrap intro-grid">
+      <h1 id="en-contact-title" tabindex="-1"><span class="intro-line">Shape your digital</span> <span class="intro-line">transformation with us</span></h1>
+      <p>Talk to our team about your technology needs.</p>
+    </div>
+  </section>
+  <section class="wrap contact-info" aria-labelledby="en-contact-info-title">
+    <div class="contact-details">
+      <h2 id="en-contact-info-title">Contact GARISDev</h2>
+      <address>
+        <dl>
+          <div class="contact-office"><dt>Office address</dt><dd>18 Office Park Suite <span>Jl. TB. Simatupang No. 18 RT 002/001, Kel. Kebagusan, Kec. Pasar Minggu, Jakarta Selatan</span></dd></div>
+          <div><dt>Phone</dt><dd><a href="tel:+622180674603">(021) 8067 4603</a></dd></div>
+          <div><dt>Email</dt><dd><a href="mailto:relation@garisdev.co.id">relation@garisdev.co.id</a></dd></div>
+        </dl>
+      </address>
+      <div class="contact-actions">
+        <a class="button button-primary" href="https://wa.me/6281389441927?text=Hello+GARISDev%2C+I+would+like+to+schedule+a+consultation." target="_blank" rel="noopener"><svg class="icon icon-small" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20.7 11.7a8.6 8.6 0 0 1-12.8 7.6L4 20.5l1.1-3.9a8.6 8.6 0 1 1 15.6-4.9Z"/><path d="M9 7.8c-.9 0-1.6.8-1.6 1.7 0 2.8 3.7 6.5 6.5 6.5.9 0 1.7-.7 1.7-1.6l-2.3-1.2-.9.9a6.8 6.8 0 0 1-2.5-2.5l.9-.9-1.2-2.3Z"/></svg><span>Chat on WhatsApp</span></a>
+        <span>+62 813-8944-1927</span>
       </div>
-      <div class="form-fields">
-        <div class="field">
-  <label for="en-name">Full name <span>(required)</span></label>
-  <input id="en-name" name="name" type="text" aria-describedby="en-name-error" autocomplete="name" required>
-  <small class="field-error" id="en-name-error" hidden></small>
-</div>
-        <div class="field">
-  <label for="en-organization">Organization <span>(required)</span></label>
-  <input id="en-organization" name="organization" type="text" aria-describedby="en-organization-error" autocomplete="organization" required>
-  <small class="field-error" id="en-organization-error" hidden></small>
-</div>
-        <div class="field">
-  <label for="en-email">Email <span>(required)</span></label>
-  <input id="en-email" name="email" type="email" aria-describedby="en-email-error" autocomplete="email" required>
-  <small class="field-error" id="en-email-error" hidden></small>
-</div>
-        <div class="field">
-  <label for="en-phone">Phone</label>
-  <input id="en-phone" name="phone" type="tel" aria-describedby="en-phone-error" autocomplete="tel">
-  <small class="field-error" id="en-phone-error" hidden></small>
-</div>
-        <div class="field field-wide">
-  <label for="en-topik">Topic <span>(required)</span></label>
-  <select id="en-topik" name="topik" aria-describedby="en-topik-error" required>
-  <option value="">Select a topic</option>
-  <option value="Konsultasi umum">General consultation</option>
-  <optgroup label="Services"><option value="Digital Strategy &amp; Consulting">Digital Strategy &amp; Consulting</option>
-<option value="Web Application Development">Web Application Development</option>
-<option value="Mobile App Development">Mobile App Development</option>
-<option value="System Integration">System Integration</option>
-<option value="Dashboard &amp; Business Intelligence">Dashboard &amp; Business Intelligence</option>
-<option value="Maintenance &amp; Technology Support">Maintenance &amp; Technology Support</option></optgroup>
-  <optgroup label="Products"><option value="Wellora">Wellora</option>
-<option value="ApartHub">ApartHub</option>
-<option value="TenantHub">TenantHub</option>
-<option value="Propera">Propera</option>
-<option value="Stayora">Stayora</option>
-<option value="GoAmbulan">GoAmbulan</option>
-<option value="AIRA">AIRA</option></optgroup>
-  <optgroup label="Industries"><option value="Properti">Property</option>
-<option value="Hospitality &amp; Wellness">Hospitality &amp; Wellness</option>
-<option value="Kesehatan">Healthcare</option>
-<option value="Pemerintahan">Government</option>
-<option value="Pendidikan">Education</option>
-<option value="Korporasi &amp; Ritel">Corporate &amp; Retail</option>
-<option value="Travel">Travel</option></optgroup>
-  <option value="Lainnya">Other</option>
-</select>
-  <small class="field-error" id="en-topik-error" hidden></small>
-</div>
-        <div class="field field-wide">
-  <label for="en-message">Message <span>(required)</span></label>
-  <textarea id="en-message" name="message" rows="5" aria-describedby="en-message-error" required></textarea>
-  <small class="field-error" id="en-message-error" hidden></small>
-</div>
-        <fieldset class="form-datetime field-wide">
-          <legend>Preferred date and time (optional)</legend>
-          <div class="field">
-  <label for="en-date">Date</label>
-  <input id="en-date" name="date" type="date" aria-describedby="en-date-error">
-  <small class="field-error" id="en-date-error" hidden></small>
-</div>
-          <div class="field">
-  <label for="en-time">Time</label>
-  <input id="en-time" name="time" type="time" aria-describedby="en-time-error">
-  <small class="field-error" id="en-time-error" hidden></small>
-</div>
-        </fieldset>
-        <div class="field field-wide consent">
-          <div class="consent-line">
-            <input id="en-consent" name="consent" type="checkbox" aria-describedby="en-consent-error" required>
-            <label for="en-consent">I agree that this data may be used to follow up on my request in line with the <a class="inline-link" href="#en-privacy">Privacy Policy</a>. (required)</label>
-          </div>
-          <small class="field-error" id="en-consent-error" hidden></small>
-        </div>
-        <div class="field-wide form-submit">
-          <button type="submit" class="button button-primary">Send Request</button>
-        </div>
-      </div>
-      <noscript><p>Contact us directly by email or WhatsApp.</p></noscript>
-    </form>
-  </div>
-  <div class="form-feedback" data-form-feedback hidden>
-    <svg class="icon" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="m4 12 5 5L20 6"/></svg>
-    <h2 id="en-contact-success-title" tabindex="-1">Simulation complete</h2>
-    <p>Your entries passed validation. This preview form does not send data.</p>
-    <button class="button button-glass" type="button" data-form-reset>Start again</button>
-  </div>
-</section>
-    <section class="glass contact-info" aria-labelledby="en-contact-info-title">
-  <h2 id="en-contact-info-title">Contact GARISDev</h2>
-  <address>
-    <dl>
-      <div><dt>Office address</dt><dd>18 Office Park Suite, Jl. TB. Simatupang No. 18 RT 002/001, Kel. Kebagusan, Kec. Pasar Minggu, Jakarta Selatan</dd></div>
-      <div><dt>Phone</dt><dd><a class="inline-link" href="tel:+622180674603">(021) 8067 4603</a></dd></div>
-      <div><dt>Email</dt><dd><a class="inline-link" href="mailto:relation@garisdev.co.id">relation@garisdev.co.id</a></dd></div>
-      <div><dt>WhatsApp</dt><dd>+62 813-8944-1927<br><a class="button button-glass" href="https://wa.me/6281389441927?text=Hello+GARISDev%2C+I+would+like+to+schedule+a+consultation." target="_blank" rel="noopener"><span>Open WhatsApp</span><svg class="icon icon-small" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20.7 11.7a8.6 8.6 0 0 1-12.8 7.6L4 20.5l1.1-3.9a8.6 8.6 0 1 1 15.6-4.9Z"/><path d="M9 7.8c-.9 0-1.6.8-1.6 1.7 0 2.8 3.7 6.5 6.5 6.5.9 0 1.7-.7 1.7-1.6l-2.3-1.2-.9.9a6.8 6.8 0 0 1-2.5-2.5l.9-.9-1.2-2.3Z"/></svg></a></dd></div>
-    </dl>
-  </address>
-  <iframe class="office-map" title="GARISDev office location on Google Maps" width="600" height="450" loading="lazy" referrerpolicy="no-referrer" src="https://www.google.com/maps?cid=11716542209608870254&amp;output=embed&amp;hl=en"></iframe>
-</section>
-  </div>
+      <a class="contact-privacy" href="#en-privacy">Privacy Policy</a>
+    </div>
+    <iframe class="office-map" title="GARISDev office location on Google Maps" width="600" height="450" loading="lazy" referrerpolicy="no-referrer" src="https://www.google.com/maps?cid=11716542209608870254&amp;output=embed&amp;hl=en"></iframe>
+  </section>
 </div>
 </div>
 
-<div class="view" id="en-privacy" lang="en" data-locale="en" data-page="privacy" data-title="Privacy Policy | GARISDev" data-description="GARISDev draft privacy policy for consultation requests.">
+<div class="view" id="en-privacy" lang="en" data-locale="en" data-page="privacy" data-title="Privacy Policy | GARISDev" data-description="GARISDev draft privacy policy for direct communication and third-party services.">
 <section class="page-intro page-intro-compact" aria-labelledby="en-privacy-title">
   <div class="wrap intro-grid">
     <h1 id="en-privacy-title" tabindex="-1">Privacy Policy</h1>
@@ -2601,11 +2362,16 @@ html:not(.js) .form-submit { display: none; }
 <div class="wrap privacy-layout">
   <nav class="privacy-toc" aria-label="Contents">
     <h2>Contents</h2>
-    <ul class="clean-list"><li><a href="#en-privacy-data">Data collected</a></li><li><a href="#en-privacy-purpose">Purpose and consent</a></li><li><a href="#en-privacy-storage">Storage and security</a></li><li><a href="#en-privacy-services">Third-party services</a></li><li><a href="#en-privacy-rights">Your personal data rights</a></li><li><a href="#en-privacy-updates">Policy updates</a></li></ul>
+    <ul class="clean-list"><li><a href="#en-privacy-data">Data we receive</a></li><li><a href="#en-privacy-purpose">How we use it</a></li><li><a href="#en-privacy-storage">Storage and security</a></li><li><a href="#en-privacy-services">Third-party services</a></li><li><a href="#en-privacy-rights">Your personal data rights</a></li><li><a href="#en-privacy-updates">Policy updates</a></li></ul>
   </nav>
   <div class="prose privacy-copy">
-    <p>Draft for review. The form in this preview does not send or store entries.</p>
-    <section aria-labelledby="en-privacy-data"><h2 id="en-privacy-data">Data collected</h2><p>The consultation form asks for your name, organization, email, topic and message. You can also provide a phone number and a preferred date and time.</p></section><section aria-labelledby="en-privacy-purpose"><h2 id="en-privacy-purpose">Purpose and consent</h2><p>The information is used to understand your needs and follow up on your consultation request. The form asks for your consent through a checkbox.</p></section><section aria-labelledby="en-privacy-storage"><h2 id="en-privacy-storage">Storage and security</h2><p>Consultation requests will be stored in GARISDev&#x27;s system with access limited to the team handling them. The retention period is being finalized.</p></section><section aria-labelledby="en-privacy-services"><h2 id="en-privacy-services">Third-party services</h2><p>Cloudflare Turnstile is planned for spam prevention. The email provider for request notifications is being selected. Website analytics are planned without tracking cookies.</p></section><section aria-labelledby="en-privacy-rights"><h2 id="en-privacy-rights">Your personal data rights</h2><p>You can contact GARISDev by email to make a personal data request, including requests for access or correction.</p><p><a class="inline-link" href="mailto:relation@garisdev.co.id">relation@garisdev.co.id</a></p><p><a class="inline-link" href="https://peraturan.bpk.go.id/Details/229798/uu-no-27-tahun-2022" rel="noopener" target="_blank">Law No. 27 of 2022 on Personal Data Protection</a></p></section><section aria-labelledby="en-privacy-updates"><h2 id="en-privacy-updates">Policy updates</h2><p>Updates to this policy will appear on this page. Contact us by email with any questions.</p><p><a class="inline-link" href="mailto:relation@garisdev.co.id">relation@garisdev.co.id</a></p></section>
+    <p>Draft for review. The Contact page does not have a form.</p>
+    <section aria-labelledby="en-privacy-data"><h2 id="en-privacy-data">Data we receive</h2><p>If you contact GARISDev by phone, email or WhatsApp, we may receive the contact details and message you share with us.</p></section>
+    <section aria-labelledby="en-privacy-purpose"><h2 id="en-privacy-purpose">How we use it</h2><p>We use the information you share to understand your needs and follow up on your consultation request.</p></section>
+    <section aria-labelledby="en-privacy-storage"><h2 id="en-privacy-storage">Storage and security</h2><p>Please email us if you have questions about how we store or handle information you share directly.</p></section>
+    <section aria-labelledby="en-privacy-services"><h2 id="en-privacy-services">Third-party services</h2><p>The Contact page uses Google Maps to show our office location and links to WhatsApp. Each provider's privacy policy applies when you use its service.</p></section>
+    <section aria-labelledby="en-privacy-rights"><h2 id="en-privacy-rights">Your personal data rights</h2><p>You can contact GARISDev by email to make a personal data request, including requests for access or correction.</p><p><a class="inline-link" href="mailto:relation@garisdev.co.id">relation@garisdev.co.id</a></p><p><a class="inline-link" href="https://peraturan.bpk.go.id/Details/229798/uu-no-27-tahun-2022" rel="noopener" target="_blank">Law No. 27 of 2022 on Personal Data Protection</a></p></section>
+    <section aria-labelledby="en-privacy-updates"><h2 id="en-privacy-updates">Policy updates</h2><p>Updates to this policy will appear on this page. Contact us by email with any questions.</p><p><a class="inline-link" href="mailto:relation@garisdev.co.id">relation@garisdev.co.id</a></p></section>
   </div>
 </div>
 <section class="cta-band" aria-labelledby="en-privacy-cta">
@@ -2848,8 +2614,6 @@ html:not(.js) .form-submit { display: none; }
   document.querySelectorAll(".finder").forEach((finder) => {
     const fieldset = finder.querySelector("fieldset");
     const status = finder.querySelector("[data-finder-status]");
-    const cta = finder.querySelector("[data-finder-cta]");
-    const contactHash = cta.hash;
     const isId = finder.closest(".view").dataset.locale === "id";
     const number = new Intl.NumberFormat(isId ? "id-ID" : "en");
     function count(group, industry) {
@@ -2858,13 +2622,11 @@ html:not(.js) .form-submit { display: none; }
     }
     fieldset.addEventListener("change", () => {
       const choice = fieldset.querySelector(":checked");
-      const topic = choice.dataset.topic;
       const label = choice.nextElementSibling.textContent;
       const industry = choice.value;
       const products = count("products", industry);
       const solutions = count("solutions", industry);
       const clients = count("clients", industry);
-      cta.href = industry === "all" ? contactHash : "?topik=" + encodeURIComponent(topic) + contactHash;
       if (isId) {
         status.textContent = label + ". " + number.format(products) + " produk, " +
           number.format(solutions) + " solusi, dan " + number.format(clients) + " klien.";
@@ -2875,121 +2637,6 @@ html:not(.js) .form-submit { display: none; }
       }
     });
   });
-
-  const suppliedTopic = new URLSearchParams(location.search).get("topik");
-  document.querySelectorAll("[data-contact-form]").forEach((form) => {
-    const view = form.closest(".view");
-    const isId = view.dataset.locale === "id";
-    const panel = form.closest(".form-panel");
-    const content = panel.querySelector("[data-form-content]");
-    const feedback = panel.querySelector("[data-form-feedback]");
-    const feedbackHeading = feedback.querySelector("h2");
-    const formHeading = content.querySelector("h2");
-    const submit = form.querySelector('button[type="submit"]');
-    const originalLabel = submit.textContent;
-    const summary = form.querySelector("[data-error-summary]");
-    const summaryText = summary.querySelector("p");
-    const summaryList = summary.querySelector("ul");
-    const fields = Array.from(form.elements).filter((element) => element.matches("input, select, textarea"));
-    const topic = form.elements.namedItem("topik");
-
-    if (suppliedTopic && Array.from(topic.options).some((option) => option.value === suppliedTopic)) {
-      topic.value = suppliedTopic;
-    }
-
-    function validationMessage(field) {
-      if (field.name === "consent" && !field.checked) {
-        return isId ? "Setujui penggunaan data untuk melanjutkan." : "Give your consent to continue.";
-      }
-      if (field.required && !field.value.trim()) {
-        return isId ? "Isi bagian ini." : "Complete this field.";
-      }
-      if (field.validity.typeMismatch) {
-        return isId ? "Masukkan alamat email yang valid." : "Enter a valid email address.";
-      }
-      if (!field.validity.valid) {
-        return isId ? "Periksa format isian ini." : "Check the format of this entry.";
-      }
-      return "";
-    }
-
-    function updateErrors() {
-      const entries = [];
-      for (const field of fields) {
-        const message = validationMessage(field);
-        const error = document.getElementById(field.getAttribute("aria-describedby"));
-        error.textContent = message;
-        error.hidden = !message;
-        if (!message) {
-          field.removeAttribute("aria-invalid");
-          continue;
-        }
-        field.setAttribute("aria-invalid", "true");
-        const label = field.name === "consent"
-          ? (isId ? "Persetujuan privasi" : "Privacy consent")
-          : field.labels[0].firstChild.textContent.trim();
-        const row = document.createElement("li");
-        const link = document.createElement("a");
-        link.className = "inline-link";
-        link.href = "#" + field.id;
-        link.textContent = label + ". " + message;
-        row.append(link);
-        entries.push(row);
-      }
-      summary.hidden = entries.length === 0;
-      summaryList.replaceChildren(...entries);
-      summaryText.textContent = isId
-        ? "Ada " + entries.length + " isian yang perlu diperbaiki."
-        : (entries.length === 1 ? "One field needs attention." : entries.length + " fields need attention.");
-      return entries.length;
-    }
-
-    form.noValidate = true;
-    form.addEventListener("input", (event) => {
-      const field = event.target;
-      if (summary.hidden || !fields.includes(field)) return;
-      const error = document.getElementById(field.getAttribute("aria-describedby"));
-      if (error.textContent !== validationMessage(field)) updateErrors();
-    });
-    summary.addEventListener("click", (event) => {
-      const link = event.target.closest("a");
-      if (!link) return;
-      event.preventDefault();
-      document.getElementById(link.hash.slice(1)).focus();
-    });
-    form.addEventListener("submit", (event) => {
-      event.preventDefault();
-      if (updateErrors()) {
-        summary.focus();
-        return;
-      }
-      form.setAttribute("aria-busy", "true");
-      submit.disabled = true;
-      submit.textContent = isId ? "Mengirim…" : "Sending…";
-      fields.forEach((field) => { field.disabled = true; });
-
-      setTimeout(() => {
-        form.removeAttribute("aria-busy");
-        submit.disabled = false;
-        submit.textContent = originalLabel;
-        fields.forEach((field) => { field.disabled = false; });
-        form.reset();
-        content.hidden = true;
-        feedback.hidden = false;
-        panel.setAttribute("aria-labelledby", feedbackHeading.id);
-        if (currentView === view) feedbackHeading.focus();
-        schedulePaint();
-      }, 275);
-    });
-    panel.querySelector("[data-form-reset]").addEventListener("click", () => {
-      content.hidden = false;
-      feedback.hidden = true;
-      panel.setAttribute("aria-labelledby", formHeading.id);
-      fields[0].focus();
-      schedulePaint();
-    });
-  });
-
 
   // Industry showcase: centered focus with native touch/trackpad scrolling and mouse drag.
   document.querySelectorAll("[data-industry-carousel]").forEach((section) => {
