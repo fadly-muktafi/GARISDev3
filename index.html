@@ -1149,13 +1149,6 @@ html:not(.js) .form-submit { display: none; }
   letter-spacing: .15em;
   text-transform: uppercase;
 }
-.about-intro-eyebrow::before {
-  content: "";
-  width: 34px;
-  height: 2px;
-  border-radius: var(--radius-pill);
-  background: linear-gradient(90deg, #a766ff, var(--magenta-hi));
-}
 .about-intro-title {
   font-size: clamp(1.85rem, 3vw, 2.65rem);
   line-height: 1.15;
@@ -1321,13 +1314,6 @@ html:not(.js) .form-submit { display: none; }
   font-weight: 500;
   letter-spacing: .15em;
   text-transform: uppercase;
-}
-.about-purpose .purpose-kicker::before {
-  content: "";
-  width: 40px;
-  height: 2px;
-  border-radius: var(--radius-pill);
-  background: linear-gradient(90deg, var(--magenta), var(--magenta-hi));
 }
 .about-purpose .purpose-row {
   display: grid;
@@ -1531,12 +1517,37 @@ html:not(.js) .form-submit { display: none; }
 .industry-showcase .industry-lead { margin-top: 12px; line-height: 1.55; }
 .industry-showcase .industry-controls { display: flex; align-items: center; gap: 8px; flex-shrink: 0; }
 .industry-showcase .industry-counter { font-size: var(--small); font-variant-numeric: tabular-nums; white-space: nowrap; margin-right: 5px; color: var(--text-2); }
-.industry-showcase .industry-arrow { display: grid; place-items: center; width: 42px; height: 42px; border: 1px solid var(--hairline-strong); border-radius: 50%; color: var(--text-1); background: transparent; cursor: pointer; padding: 0; }
+.industry-showcase .industry-arrow { display: grid; place-items: center; width: 44px; height: 44px; border: 1px solid var(--hairline-strong); border-radius: 50%; color: var(--text-1); background: transparent; cursor: pointer; padding: 0; }
 .industry-showcase .industry-arrow svg { width: 20px; height: 20px; }
 .industry-showcase .industry-arrow:not(:disabled):hover { background: var(--glass-fill); border-color: #bd9aef; }
 .industry-showcase .industry-arrow:disabled { opacity: .35; cursor: default; }
+.industry-showcase .industry-viewport {
+  --industry-edge: clamp(30px, 6vw, 72px);
+  position: relative;
+}
+@supports ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  .industry-showcase .industry-viewport::before,
+  .industry-showcase .industry-viewport::after {
+    position: absolute;
+    inset-block: 0;
+    z-index: 1;
+    width: var(--industry-edge);
+    -webkit-backdrop-filter: blur(6px);
+    backdrop-filter: blur(6px);
+    pointer-events: none;
+    content: "";
+  }
+  .industry-showcase .industry-viewport::before {
+    left: 0;
+    mask-image: linear-gradient(90deg, #000, transparent);
+  }
+  .industry-showcase .industry-viewport::after {
+    right: 0;
+    mask-image: linear-gradient(270deg, #000, transparent);
+  }
+}
 .industry-showcase .industry-track {
-  --card-width: 33%;
+  --card-width: 36%;
   --card-gap: 16px;
   position: relative;
   display: flex;
@@ -1548,6 +1559,7 @@ html:not(.js) .form-submit { display: none; }
   scrollbar-width: none;
   padding-block: 12px 20px;
   cursor: grab;
+  mask-image: linear-gradient(90deg, transparent, #000 var(--industry-edge), #000 calc(100% - var(--industry-edge)), transparent);
 }
 .industry-showcase .industry-track::-webkit-scrollbar { display: none; }
 .industry-showcase .industry-track::before,
@@ -1556,21 +1568,31 @@ html:not(.js) .form-submit { display: none; }
   flex: 0 0 calc((100% - var(--card-width)) / 2 - var(--card-gap));
 }
 .industry-showcase .industry-track.is-dragging { scroll-snap-type: none; cursor: grabbing; user-select: none; }
-.industry-showcase .industry-track:focus-visible { outline: 2px solid #bd9aef; outline-offset: 4px; }
+.industry-showcase .industry-track:focus-visible { outline: none; }
+.industry-showcase .industry-viewport:has(.industry-track:focus-visible) { outline: 2px solid #bd9aef; outline-offset: 4px; border-radius: 22px; }
 
-.industry-showcase .industry-card { flex: 0 0 var(--card-width); min-width: 0; display: flex; flex-direction: column; justify-content: center; scroll-snap-align: center; scroll-snap-stop: always; border: 1px solid var(--hairline-strong); border-radius: 18px; padding: clamp(18px, 2.1vw, 25px); background: linear-gradient(145deg, rgb(255 255 255 / .065), rgb(255 255 255 / .015)), var(--bg-0); overflow: hidden; transform: scale(var(--card-scale, 1)); opacity: var(--card-opacity, 1); transition: border-color .25s, background-color .25s; }
-.industry-showcase .industry-card.is-active { border-color: rgb(189 154 239 / .62); background: linear-gradient(145deg, rgb(189 154 239 / .10), rgb(255 255 255 / .025)), var(--bg-0); }
+.industry-showcase .industry-card { flex: 0 0 var(--card-width); min-width: 0; display: flex; flex-direction: column; justify-content: center; scroll-snap-align: center; scroll-snap-stop: always; border: 1px solid var(--hairline-strong); border-radius: 22px; padding: clamp(20px, 2.35vw, 30px); background: linear-gradient(145deg, rgb(255 255 255 / .065), rgb(255 255 255 / .015)), var(--bg-0); overflow: hidden; transform: scale(var(--card-scale, 1)); opacity: var(--card-opacity, 1); transition: border-color .25s, background-color .25s; }
+.industry-showcase .industry-card.is-active { border-color: rgb(189 154 239 / .62); background: linear-gradient(145deg, rgb(189 154 239 / .10), rgb(255 255 255 / .025)), var(--bg-0); box-shadow: inset 0 1px 0 var(--hairline); }
 .industry-showcase .industry-card-visual { display: flex; align-items: center; margin-bottom: 16px; }
 .industry-showcase .industry-icon { width: 30px; height: 30px; color: #bd9aef; flex: none; }
 .industry-showcase .industry-card h3 { font-size: clamp(1.15rem, 1.65vw, 1.45rem); font-weight: 500; line-height: 1.25; letter-spacing: -.025em; overflow-wrap: break-word; }
 .industry-showcase .industry-number { font-weight: 400; color: var(--text-2); }
 .industry-showcase .industry-card p { margin-top: 12px; font-size: var(--small); line-height: 1.55; }
-@media (max-width: 900px) { .industry-showcase .industry-track { --card-width: 58%; } }
+@media (max-width: 900px) {
+  .industry-showcase .industry-viewport { --industry-edge: 44px; }
+  .industry-showcase .industry-track { --card-width: 62%; }
+}
 @media (max-width: 640px) {
   .industry-showcase .industry-heading { flex-direction: column; align-items: stretch; gap: 16px; margin-bottom: 20px; }
   .industry-showcase .industry-controls { align-self: flex-end; }
-  .industry-showcase .industry-track { --card-width: 82%; --card-gap: 12px; }
-  .industry-showcase .industry-card { padding: 18px; }
+  .industry-showcase .industry-viewport { --industry-edge: 16px; }
+  .industry-showcase .industry-track { --card-width: 84%; --card-gap: 12px; }
+  .industry-showcase .industry-card { padding: 20px; }
+}
+@media (prefers-reduced-transparency: reduce), (prefers-contrast: more), (forced-colors: active) {
+  .industry-showcase .industry-track { mask-image: none; }
+  .industry-showcase .industry-viewport::before,
+  .industry-showcase .industry-viewport::after { content: none; }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -1828,11 +1850,12 @@ html:not(.js) .form-submit { display: none; }
       </div>
       <div class="industry-controls">
         <span class="industry-counter" data-industry-counter>01 / 07</span>
-        <button type="button" class="industry-arrow" data-industry-prev aria-label="Geser ke kiri" aria-controls="id-industry-track" disabled><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5m6-6-6 6 6 6"/></svg></button>
+        <button type="button" class="industry-arrow" data-industry-toggle data-play-label="Mulai putar otomatis" data-pause-label="Jeda putar otomatis" aria-label="Jeda putar otomatis" aria-controls="id-industry-track" hidden><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5v14m6-14v14"/></svg></button>
+        <button type="button" class="industry-arrow" data-industry-prev aria-label="Geser ke kiri" aria-controls="id-industry-track"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5m6-6-6 6 6 6"/></svg></button>
         <button type="button" class="industry-arrow" data-industry-next aria-label="Geser ke kanan" aria-controls="id-industry-track"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></button>
       </div>
     </div>
-    <ul class="clean-list industry-track" id="id-industry-track" data-industry-track tabindex="0" aria-label="Solusi Digital untuk Berbagai Industri.">
+    <div class="industry-viewport"><ul class="clean-list industry-track" id="id-industry-track" data-industry-track tabindex="0" aria-label="Solusi Digital untuk Berbagai Industri.">
       <li class="industry-card">
         <div class="industry-card-visual"><svg class="industry-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21V4h10v17M13 9h8v12M1 21h22M7 8h2M7 12h2M7 16h2M16 13h2M16 17h2"/></svg></div>
         <h3 lang="en"><span class="industry-number">01 | </span>Property &amp; Building Management</h3>
@@ -1868,19 +1891,7 @@ html:not(.js) .form-submit { display: none; }
         <h3 lang="en"><span class="industry-number">07 | </span>Custom Enterprise Solutions</h3>
         <p>Pengembangan aplikasi dan platform digital yang disesuaikan dengan kebutuhan serta proses bisnis setiap organisasi.</p>
       </li>
-    </ul>
-  </div>
-</section>
-<section class="section section-alt glow-right" aria-labelledby="id-products-services-title">
-  <div class="wrap split">
-    <div data-reveal><h2 id="id-products-services-title">Mitra teknologi end-to-end</h2><p class="prose">Dari strategi sampai support, kami bantu mempercepat transformasi digital di proses operasional, layanan pelanggan, dan pengambilan keputusan.</p></div>
-    <div data-reveal><ul class="clean-list glass list-panel">
-<li class="service-row"><svg class="icon" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4v15h15M8 14l4-4 3 2 5-6m-5 0h5v5"/></svg><div><h3>Digital Strategy &amp; Consulting</h3><p>Memetakan kebutuhan bisnis dan merumuskan roadmap teknologi yang realistis.</p></div></li>
-<li class="service-row"><svg class="icon" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18m-11 4-2 2 2 2m4-4 2 2-2 2"/></svg><div><h3>Web Application Development</h3><p>Membangun aplikasi web yang bisa berkembang bersama proses bisnis Anda.</p></div></li>
-<li class="service-row"><svg class="icon" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="2.5" width="10" height="19" rx="2"/><path d="M11 18.5h2"/></svg><div><h3>Mobile App Development</h3><p>Aplikasi Android dan iOS untuk pelanggan maupun tim lapangan.</p></div></li>
-<li class="service-row"><svg class="icon" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 14.5l6-5m-6.4 6.2-1.8 1.8a3.5 3.5 0 0 1-5-5l4.1-4.1a3.5 3.5 0 0 1 4.9 0m2.4 7.2a3.5 3.5 0 0 0 4.9 0l4.1-4.1a3.5 3.5 0 0 0-5-5l-1.8 1.8"/></svg><div><h3>System Integration</h3><p>Menghubungkan sistem yang sudah ada lewat API dan integrasi data.</p></div></li>
-<li class="service-row"><svg class="icon" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4v16h16M8 15v-3m5 3V8m5 7v-5"/></svg><div><h3>Dashboard &amp; Business Intelligence</h3><p>Mengubah data operasional jadi laporan yang siap dipakai untuk mengambil keputusan.</p></div></li>
-</ul></div>
+    </ul></div>
   </div>
 </section>
 <section class="section " aria-labelledby="id-products-solutions-title">
@@ -2329,11 +2340,12 @@ html:not(.js) .form-submit { display: none; }
       </div>
       <div class="industry-controls">
         <span class="industry-counter" data-industry-counter>01 / 07</span>
-        <button type="button" class="industry-arrow" data-industry-prev aria-label="Scroll left" aria-controls="en-industry-track" disabled><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5m6-6-6 6 6 6"/></svg></button>
+        <button type="button" class="industry-arrow" data-industry-toggle data-play-label="Start autoplay" data-pause-label="Pause autoplay" aria-label="Pause autoplay" aria-controls="en-industry-track" hidden><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5v14m6-14v14"/></svg></button>
+        <button type="button" class="industry-arrow" data-industry-prev aria-label="Scroll left" aria-controls="en-industry-track"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5m6-6-6 6 6 6"/></svg></button>
         <button type="button" class="industry-arrow" data-industry-next aria-label="Scroll right" aria-controls="en-industry-track"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></button>
       </div>
     </div>
-    <ul class="clean-list industry-track" id="en-industry-track" data-industry-track tabindex="0" aria-label="Digital Solutions for Diverse Industries.">
+    <div class="industry-viewport"><ul class="clean-list industry-track" id="en-industry-track" data-industry-track tabindex="0" aria-label="Digital Solutions for Diverse Industries.">
       <li class="industry-card">
         <div class="industry-card-visual"><svg class="industry-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21V4h10v17M13 9h8v12M1 21h22M7 8h2M7 12h2M7 16h2M16 13h2M16 17h2"/></svg></div>
         <h3 lang="en"><span class="industry-number">01 | </span>Property &amp; Building Management</h3>
@@ -2369,7 +2381,7 @@ html:not(.js) .form-submit { display: none; }
         <h3 lang="en"><span class="industry-number">07 | </span>Custom Enterprise Solutions</h3>
         <p>Custom application and digital platform development tailored to each organization’s needs and business processes.</p>
       </li>
-    </ul>
+    </ul></div>
   </div>
 </section>
 <section class="section section-alt glow-right" aria-labelledby="en-products-services-title">
@@ -2992,17 +3004,53 @@ html:not(.js) .form-submit { display: none; }
   // Industry showcase: centered focus with native touch/trackpad scrolling and mouse drag.
   document.querySelectorAll("[data-industry-carousel]").forEach((section) => {
     const track = section.querySelector("[data-industry-track]");
+    const originals = Array.from(track.children);
+    const total = originals.length;
+    if (total < 2) return;
+    const first = 2, last = first + total - 1;
+    // Mirror both neighbors so the centered card looks the same across the seam.
+    function clone(card) {
+      const copy = card.cloneNode(true);
+      copy.setAttribute("aria-hidden", "true");
+      copy.inert = true;
+      return copy;
+    }
+    track.prepend(...originals.slice(-first).map(clone));
+    track.append(...originals.slice(0, first).map(clone));
     const cards = Array.from(track.children);
     const prev = section.querySelector("[data-industry-prev]");
     const next = section.querySelector("[data-industry-next]");
+    const rotation = section.querySelector("[data-industry-toggle]");
+    const rotationIcon = rotation.querySelector("path");
     const counter = section.querySelector("[data-industry-counter]");
     const format = (n) => String(n).padStart(2, "0");
-    let active = 0, requested = null, frame = 0, drag = null;
+    const logical = (i) => (i - first + total) % total;
+    const isClone = (i) => i < first || i > last;
+    let active = first, requested = null, frame = 0, drag = null, width = 0;
+    let playing = !reducedMotion.matches, visible = false, hovered = false, touching = false;
+    let timer = 0, scrollTimer = 0;
+    const canPlay = () => playing && visible && !hovered && !touching && !drag && !document.hidden && track.clientWidth > 0;
+    function queueAutoplay() {
+      clearTimeout(timer);
+      if (!canPlay()) return;
+      timer = setTimeout(() => {
+        if (canPlay()) move(1);
+        queueAutoplay();
+      }, 2500);
+    }
+    function setPlaying(value) {
+      playing = value;
+      const label = playing ? rotation.dataset.pauseLabel : rotation.dataset.playLabel;
+      rotation.setAttribute("aria-label", label);
+      rotation.title = label;
+      rotationIcon.setAttribute("d", playing ? "M9 5v14m6-14v14" : "M8 5l11 7-11 7Z");
+      queueAutoplay();
+    }
     const center = (card) => card.offsetLeft + card.offsetWidth / 2;
     const target = (i) => Math.max(0, Math.min(track.scrollWidth - track.clientWidth, center(cards[i]) - track.clientWidth / 2));
     function update() {
       frame = 0;
-      if (!track.clientWidth) return;
+      if (!width || !track.clientWidth) return;
       const midpoint = track.scrollLeft + track.clientWidth / 2;
       const step = Math.max(1, center(cards[1]) - center(cards[0]));
       let nearest = Infinity;
@@ -3014,34 +3062,57 @@ html:not(.js) .form-submit { display: none; }
         card.style.setProperty("--card-opacity", String(1 - .40 * factor));
       });
       cards.forEach((card, i) => card.classList.toggle("is-active", i === active));
-      counter.textContent = format(active + 1) + " / " + format(cards.length);
-      if (requested !== null && Math.abs(track.scrollLeft - target(requested)) <= 2) requested = null;
-      const index = requested ?? active;
-      prev.disabled = index === 0;
-      next.disabled = index === cards.length - 1;
+      const countText = format(logical(active) + 1) + " / " + format(total);
+      if (counter.textContent !== countText) counter.textContent = countText;
     }
     function schedule() { if (!frame) frame = requestAnimationFrame(update); }
     function go(i, instant = false) {
       if (!track.clientWidth) return;
-      requested = Math.max(0, Math.min(cards.length - 1, i));
-      track.scrollTo({ left: target(requested), behavior: instant || reducedMotion.matches ? "instant" : "smooth" });
+      const index = Math.max(0, Math.min(cards.length - 1, i));
+      const left = target(index);
+      requested = Math.abs(track.scrollLeft - left) > 1 ? index : null;
+      if (requested === null && isClone(index)) {
+        go(first + logical(index), true);
+        return;
+      }
+      track.scrollTo({ left, behavior: instant || reducedMotion.matches ? "instant" : "smooth" });
       schedule();
+    }
+    function settle() {
+      if (drag || !width || !track.clientWidth) return;
+      requested = null;
+      update();
+      if (isClone(active)) go(first + logical(active), true);
     }
     function move(direction) { go((requested ?? active) + direction); }
     prev.addEventListener("click", () => move(-1));
     next.addEventListener("click", () => move(1));
-    track.addEventListener("scroll", schedule, { passive: true });
-    track.addEventListener("scrollend", () => { requested = null; schedule(); });
-    track.addEventListener("wheel", () => { requested = null; }, { passive: true });
-    track.addEventListener("touchstart", () => { requested = null; }, { passive: true });
+    const hasScrollEnd = "onscrollend" in track;
+    track.addEventListener("scroll", () => {
+      schedule();
+      if (requested === null) queueAutoplay();
+      if (!hasScrollEnd) {
+        clearTimeout(scrollTimer);
+        scrollTimer = setTimeout(settle, 160);
+      }
+    }, { passive: true });
+    track.addEventListener("scrollend", settle);
+    track.addEventListener("wheel", () => { requested = null; queueAutoplay(); }, { passive: true });
+    function onTouch(event) {
+      touching = event.touches.length > 0;
+      if (touching) requested = null;
+      queueAutoplay();
+    }
+    ["touchstart", "touchend", "touchcancel"].forEach((type) => track.addEventListener(type, onTouch, { passive: true }));
     track.addEventListener("keydown", (event) => {
-      const action = { ArrowLeft: () => move(-1), ArrowRight: () => move(1), Home: () => go(0), End: () => go(cards.length - 1) }[event.key];
+      const action = { ArrowLeft: () => move(-1), ArrowRight: () => move(1), Home: () => go(first), End: () => go(last) }[event.key];
       if (action) { event.preventDefault(); action(); }
     });
     track.addEventListener("pointerdown", (event) => {
       if (event.pointerType !== "mouse" || event.button !== 0) return;
       requested = null;
       drag = { id: event.pointerId, x: event.clientX, left: track.scrollLeft };
+      queueAutoplay();
       track.classList.add("is-dragging");
       track.setPointerCapture(event.pointerId);
     });
@@ -3057,22 +3128,45 @@ html:not(.js) .form-submit { display: none; }
       track.classList.remove("is-dragging");
       if (track.hasPointerCapture(event.pointerId)) track.releasePointerCapture(event.pointerId);
       go(index);
+      queueAutoplay();
     }
     track.addEventListener("pointerup", finishDrag);
     track.addEventListener("pointercancel", finishDrag);
     track.addEventListener("lostpointercapture", finishDrag);
     // Recenter on viewport changes without resetting the selected classification.
-    let width = 0;
     new ResizeObserver(() => {
-      if (!track.clientWidth) return;
-      if (track.clientWidth !== width) {
-        width = track.clientWidth;
-        go(requested ?? active, true);
+      const nextWidth = track.clientWidth;
+      if (nextWidth !== width) {
+        width = nextWidth;
+        if (width) go(first + logical(requested ?? active), true);
+        queueAutoplay();
       }
       schedule();
     }).observe(track);
     addEventListener("hashchange", () => requestAnimationFrame(schedule));
-    reducedMotion.addEventListener("change", schedule);
+    rotation.addEventListener("click", () => setPlaying(!playing));
+    section.addEventListener("focusin", (event) => {
+      if (event.target.matches(":focus-visible")) setPlaying(false);
+    });
+    section.addEventListener("pointerenter", (event) => {
+      if (event.pointerType === "mouse") { hovered = true; queueAutoplay(); }
+    });
+    section.addEventListener("pointerleave", (event) => {
+      if (event.pointerType === "mouse") { hovered = false; queueAutoplay(); }
+    });
+    document.addEventListener("visibilitychange", queueAutoplay);
+    reducedMotion.addEventListener("change", () => {
+      if (reducedMotion.matches) setPlaying(false);
+      schedule();
+    });
+    if ("IntersectionObserver" in window) {
+      new IntersectionObserver(([entry]) => {
+        visible = entry.intersectionRatio >= .5;
+        queueAutoplay();
+      }, { threshold: .5 }).observe(track);
+    } else visible = true;
+    setPlaying(playing);
+    rotation.hidden = false;
     schedule();
   });
 
